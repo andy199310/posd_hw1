@@ -6,5 +6,6 @@
 
 double sumPerimeterOfShape(std::vector<Shape *> shapes);
 
+Shape* largestAreaShape(std::vector<Shape *> shapes);
 
 #endif // SHAPEFUNCTION_H_INCLUDED
