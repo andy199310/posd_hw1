@@ -22,3 +22,14 @@ Shape* largestAreaShape(std::vector<Shape *> shapes){
     }
     return largestAreaPointer;
 }
+
+std::vector<Shape *> sortShapesByArea(std::vector<Shape *> shapes){
+    for(unsigned int i=0; i<shapes.size()-1; i++){
+        for(unsigned int j=0; j<shapes.size()-1-i; j++){
+            if (shapes.at(j)->area() > shapes.at(j+1)->area()){
+                std::swap(shapes.at(j), shapes.at(j+1));
+            }
+        }
+    }
+    return shapes;
+}
