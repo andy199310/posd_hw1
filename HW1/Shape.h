@@ -2,6 +2,7 @@
 #define SHAPE_H_INCLUDED
 
 class Shape{
+public:
     virtual double const area() = 0;
 
     virtual double const perimeter() = 0;

@@ -3,7 +3,7 @@
 
 #include "Shape.h"
 
-class Triangle : Shape{
+class Triangle : public Shape{
 public:
     Triangle(double point1X, double point1Y, double point2X, double point2Y, double point3X, double point3Y);
 
