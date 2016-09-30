@@ -4,13 +4,13 @@
 #define EPSILON 0.001
 
 #include <vector>
-#include "shapeFunction.h"
-#include "Shape.h"
-#include "Rectangle.h"
-#include "Circle.h"
-#include "Triangle.h"
+#include "../shapeFunction.h"
+#include "../Shape.h"
+#include "../Rectangle.h"
+#include "../Circle.h"
+#include "../Triangle.h"
 
-#include "..\cppunitlite\TestHarness.h"
+#include "../../cppunitlite/TestHarness.h"
 
 TEST(sumPerimeterOfShape, shapeFunctoin){
     std::vector<Shape *> shapes;

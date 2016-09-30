@@ -3,8 +3,8 @@
 
 #define EPSILON 0.001
 
-#include "Rectangle.h"
-#include "..\cppunitlite\TestHarness.h"
+#include "../Rectangle.h"
+#include "../../cppunitlite/TestHarness.h"
 
 TEST(basic, Rectangle){
     Rectangle rectangle(0, 5, 10, 5);

@@ -3,8 +3,8 @@
 
 #define EPSILON 0.001
 
-#include "Circle.h"
-#include "..\cppunitlite\TestHarness.h"
+#include "../Circle.h"
+#include "../../cppunitlite/TestHarness.h"
 
 TEST(basic, Circle){
     Circle circle(0, 1, 10);

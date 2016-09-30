@@ -3,11 +3,12 @@
 
 #define EPSILON 0.001
 
-#include "Triangle.h"
-#include "..\cppunitlite\TestHarness.h"
+#include "../Triangle.h"
+#include "../../cppunitlite/TestHarness.h"
 
 TEST(basic, Triangle){
     Triangle triangle(0, 0, 0, 1, 1, 0);
+    CHECK(false);
 }
 
 TEST(area, Triangle){

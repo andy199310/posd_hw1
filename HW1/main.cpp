@@ -1,11 +1,8 @@
 #include <iostream>
 
-#include "..\cppunitlite\TestHarness.h"
+#include "../cppunitlite/TestHarness.h"
 
-#include "utRectangle.h"
-#include "utCircle.h"
-#include "utTriangle.h"
-#include "utshapeFunctoin.h"
+#include "unitTest/utMain.h"
 
 int main(){
     TestResult tr;
