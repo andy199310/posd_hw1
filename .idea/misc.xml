@@ -5,6 +5,9 @@
     <sourceRoots>
       <file path="$PROJECT_DIR$/HW1" />
     </sourceRoots>
+    <libraryRoots>
+      <file path="$PROJECT_DIR$/cppunitlite" />
+    </libraryRoots>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />

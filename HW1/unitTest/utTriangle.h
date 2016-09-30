@@ -8,7 +8,6 @@
 
 TEST(basic, Triangle){
     Triangle triangle(0, 0, 0, 1, 1, 0);
-    CHECK(false);
 }
 
 TEST(area, Triangle){
