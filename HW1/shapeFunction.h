@@ -6,8 +6,10 @@
 
 double sumPerimeterOfShape(std::vector<Shape *> shapes);
 
-Shape* largestAreaShape(std::vector<Shape *> shapes);
+Shape* maxArea(std::vector<Shape *> shapes);
 
 std::vector<Shape *> sortShapesByArea(std::vector<Shape *> shapes);
+
+std::vector<Shape *> sortByDecreasingPerimeter(std::vector<Shape *> shapes);
 
 #endif // SHAPEFUNCTION_H_INCLUDED

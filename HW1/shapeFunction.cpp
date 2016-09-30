@@ -11,7 +11,7 @@ double sumPerimeterOfShape(std::vector<Shape *> shapes){
     return total;
 }
 
-Shape* largestAreaShape(std::vector<Shape *> shapes){
+Shape* maxArea(std::vector<Shape *> shapes){
     double largestArea = 0;
     Shape* largestAreaPointer = 0;
     for(Shape *shape : shapes){
@@ -27,6 +27,17 @@ std::vector<Shape *> sortShapesByArea(std::vector<Shape *> shapes){
     for(unsigned int i=0; i<shapes.size()-1; i++){
         for(unsigned int j=0; j<shapes.size()-1-i; j++){
             if (shapes.at(j)->area() > shapes.at(j+1)->area()){
+                std::swap(shapes.at(j), shapes.at(j+1));
+            }
+        }
+    }
+    return shapes;
+}
+
+std::vector<Shape *> sortByDecreasingPerimeter(std::vector<Shape *> shapes) {
+    for(unsigned int i=0; i<shapes.size()-1; i++){
+        for(unsigned int j=0; j<shapes.size()-1-i; j++){
+            if (shapes.at(j)->perimeter() < shapes.at(j+1)->perimeter()){
                 std::swap(shapes.at(j), shapes.at(j+1));
             }
         }

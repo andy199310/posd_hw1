@@ -8,6 +8,10 @@
     <libraryRoots>
       <file path="$PROJECT_DIR$/cppunitlite" />
     </libraryRoots>
+    <excludeRoots>
+      <file path="$PROJECT_DIR$/HW1/bin" />
+      <file path="$PROJECT_DIR$/HW1/obj" />
+    </excludeRoots>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
