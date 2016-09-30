@@ -34,6 +34,7 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add option="-std=c++11" />
 		</Compiler>
 		<Unit filename="Circle.cpp" />
 		<Unit filename="Circle.h" />
@@ -43,6 +44,8 @@
 		<Unit filename="Triangle.cpp" />
 		<Unit filename="Triangle.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="shapeFunction.cpp" />
+		<Unit filename="shapeFunction.h" />
 		<Unit filename="utCircle.h">
 			<Option virtualFolder="unitTest/" />
 		</Unit>
