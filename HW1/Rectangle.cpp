@@ -2,26 +2,26 @@
 
 Rectangle::Rectangle(double x, double y, double width, double height):x(x), y(y), width(width), height(height){};
 
-double const Rectangle::getX(){
+double Rectangle::getX() const{
     return x;
 }
 
-double const Rectangle::getY(){
+double Rectangle::getY() const{
     return y;
 }
 
-double const Rectangle::getWidth(){
+double Rectangle::getWidth() const{
     return width;
 }
 
-double const Rectangle::getHeight(){
+double Rectangle::getHeight() const{
     return height;
 }
 
-double const Rectangle::area(){
+double Rectangle::area() const{
     return width * height;
 }
 
-double const Rectangle::perimeter(){
+double Rectangle::perimeter() const{
     return 2 * (width + height);
 }

@@ -3,9 +3,9 @@
 
 class Shape{
 public:
-    virtual double const area() = 0;
+    virtual double area() const = 0;
 
-    virtual double const perimeter() = 0;
+    virtual double perimeter() const = 0;
 };
 
 

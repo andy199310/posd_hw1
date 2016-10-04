@@ -2,22 +2,22 @@
 
 Circle::Circle(double centerX, double centerY, double radius):centerX(centerX), centerY(centerY), radius(radius){};
 
-double const Circle::getCenterX(){
+double Circle::getCenterX() const{
     return centerX;
 }
 
-double const Circle::getCenterY(){
+double Circle::getCenterY() const{
     return centerY;
 }
 
-double const Circle::getRadius(){
+double Circle::getRadius() const{
     return radius;
 }
 
-double const Circle::area(){
+double Circle::area() const{
     return 3 * radius * radius;
 }
 
-double const Circle::perimeter(){
+double Circle::perimeter() const{
     return 2 * 3 * radius;
 }

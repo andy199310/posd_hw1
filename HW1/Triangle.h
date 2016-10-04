@@ -7,9 +7,9 @@ class Triangle : public Shape{
 public:
     Triangle(double point1X, double point1Y, double point2X, double point2Y, double point3X, double point3Y);
 
-    double const area();
+    double area() const;
 
-    double const perimeter();
+    double perimeter() const;
 
 private:
     double point1X;

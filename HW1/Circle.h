@@ -7,13 +7,13 @@ class Circle : public Shape{
 public:
     Circle(double centerX, double centerY, double radius);
 
-    double const getCenterX();
-    double const getCenterY();
-    double const getRadius();
+    double getCenterX() const;
+    double getCenterY() const;
+    double getRadius() const;
 
-    double const area();
+    double area() const;
 
-    double const perimeter();
+    double perimeter() const;
 
 private:
     double centerX;

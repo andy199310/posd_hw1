@@ -12,15 +12,15 @@ void CompositeShape::add(Shape * shape) {
     shapeVector.push_back(shape);
 }
 
-int CompositeShape::size() {
+int CompositeShape::size() const{
     return shapeVector.size();
 }
 
-Shape *CompositeShape::at(unsigned int index) {
+Shape *CompositeShape::at(unsigned int index) const{
     return shapeVector.at(index);
 }
 
-const double CompositeShape::area() {
+double CompositeShape::area() const{
     double area = 0;
     for(Shape* shape : shapeVector){
         area += shape->area();
@@ -28,7 +28,7 @@ const double CompositeShape::area() {
     return area;
 }
 
-const double CompositeShape::perimeter() {
+double CompositeShape::perimeter() const{
     double perimeter = 0;
     for(Shape* shape : shapeVector){
         perimeter += shape->perimeter();

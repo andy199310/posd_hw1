@@ -15,11 +15,11 @@ public:
 
     void add(Shape *shape);
     void remove(unsigned int index);
-    int size();
-    Shape* at(unsigned int index);
+    int size() const;
+    Shape* at(unsigned int index) const;
 
-    const double area();
-    const double perimeter();
+    double area() const;
+    double perimeter() const;
 
 private:
     std::vector<Shape *> shapeVector;

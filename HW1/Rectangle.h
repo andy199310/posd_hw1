@@ -7,14 +7,14 @@ class Rectangle : public Shape{
 public:
     Rectangle(double x, double y, double width, double height);
 
-    double const getX();
-    double const getY();
-    double const getWidth();
-    double const getHeight();
+    double getX() const;
+    double getY() const;
+    double getWidth() const;
+    double getHeight() const;
 
-    double const area();
+    double area() const;
 
-    double const perimeter();
+    double perimeter() const;
 
 
 private:
