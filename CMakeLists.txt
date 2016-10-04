@@ -17,7 +17,7 @@ set(SOURCE_FILES
         HW1/unitTest/utCircle.h
         HW1/unitTest/utRectangle.h
         HW1/unitTest/utshapeFunctoin.h
-        HW1/unitTest/utTriangle.h HW1/unitTest/utMain.h)
+        HW1/unitTest/utTriangle.h HW1/unitTest/utMain.h HW1/CompositeShape.cpp HW1/CompositeShape.h HW1/unitTest/utCompositeShape.h)
 
 add_executable(posd_hw1 ${SOURCE_FILES})
 
