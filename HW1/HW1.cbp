@@ -38,6 +38,8 @@
 		</Compiler>
 		<Unit filename="Circle.cpp" />
 		<Unit filename="Circle.h" />
+		<Unit filename="CompositeShape.cpp" />
+		<Unit filename="CompositeShape.h" />
 		<Unit filename="Rectangle.cpp" />
 		<Unit filename="Rectangle.h" />
 		<Unit filename="Shape.h" />
@@ -46,13 +48,22 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="shapeFunction.cpp" />
 		<Unit filename="shapeFunction.h" />
-		<Unit filename="utCircle.h">
+		<Unit filename="unitTest/utCircle.h">
 			<Option virtualFolder="unitTest/" />
 		</Unit>
-		<Unit filename="utRectangle.h">
+		<Unit filename="unitTest/utCompositeShape.h">
 			<Option virtualFolder="unitTest/" />
 		</Unit>
-		<Unit filename="utTriangle.h">
+		<Unit filename="unitTest/utMain.h">
+			<Option virtualFolder="unitTest/" />
+		</Unit>
+		<Unit filename="unitTest/utRectangle.h">
+			<Option virtualFolder="unitTest/" />
+		</Unit>
+		<Unit filename="unitTest/utTriangle.h">
+			<Option virtualFolder="unitTest/" />
+		</Unit>
+		<Unit filename="unitTest/utshapeFunctoin.h">
 			<Option virtualFolder="unitTest/" />
 		</Unit>
 		<Extensions>
