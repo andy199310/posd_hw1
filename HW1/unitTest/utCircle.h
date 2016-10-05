@@ -19,7 +19,7 @@ TEST(basic, Circle){
 TEST(exceptions, Circle){
     try{
         Circle circle(0, 0, -1);
-        CHECK(false);
+        FAIL("Missing Circle exception");
     }catch (char const* message){
         CHECK(true);
     }

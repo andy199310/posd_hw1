@@ -13,7 +13,7 @@ TEST(basic, Triangle){
 TEST(exception, Triangle){
     try{
         Triangle triangle(0, 0, 0, 1, 0, 0);
-        CHECK(false);
+        FAIL("Missing Triangle exception");
     }catch(char const* message){
         CHECK(true);
     }

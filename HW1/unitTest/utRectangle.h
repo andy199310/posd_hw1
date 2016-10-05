@@ -22,7 +22,7 @@ TEST(basic, Rectangle){
 TEST(exceptions, Rectangle){
     try{
         Rectangle rectangle(0, 0, -1, 0);
-        CHECK(false);
+        FAIL("Missing Rectangle exception");
     }catch (char const* message){
         CHECK(true);
     }
