@@ -10,6 +10,15 @@ TEST(basic, Triangle){
     Triangle triangle(0, 0, 0, 1, 1, 0);
 }
 
+TEST(exception, Triangle){
+    try{
+        Triangle triangle(0, 0, 0, 1, 0, 0);
+        CHECK(false);
+    }catch(char const* message){
+        CHECK(true);
+    }
+}
+
 TEST(area, Triangle){
     Triangle triangle(0, 0, 0, 1, 1, 0);
 

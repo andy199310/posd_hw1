@@ -19,6 +19,15 @@ TEST(basic, Rectangle){
     DOUBLES_EQUAL(5, rectangle.getHeight(), EPSILON);
 }
 
+TEST(exceptions, Rectangle){
+    try{
+        Rectangle rectangle(0, 0, -1, 0);
+        CHECK(false);
+    }catch (char const* message){
+        CHECK(true);
+    }
+}
+
 TEST(area, Rectangle){
     Rectangle rectangle(0, 5, 10, 5);
 

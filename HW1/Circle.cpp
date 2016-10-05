@@ -1,6 +1,10 @@
 #include "Circle.h"
 
-Circle::Circle(double centerX, double centerY, double radius):centerX(centerX), centerY(centerY), radius(radius){};
+Circle::Circle(double centerX, double centerY, double radius):centerX(centerX), centerY(centerY), radius(radius){
+    if(radius <= 0){
+        throw "Giving numbers cannot create a Circle.";
+    }
+};
 
 double Circle::getCenterX() const{
     return centerX;

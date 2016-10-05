@@ -3,7 +3,11 @@
 #include "Triangle.h"
 
 Triangle::Triangle(double point1X, double point1Y, double point2X, double point2Y, double point3X, double point3Y):
-    point1X(point1X), point1Y(point1Y), point2X(point2X), point2Y(point2Y), point3X(point3X), point3Y(point3Y){}
+    point1X(point1X), point1Y(point1Y), point2X(point2X), point2Y(point2Y), point3X(point3X), point3Y(point3Y){
+    if(((point1X == point2X) && (point2X == point3X)) || ((point1Y == point2Y) && (point2Y == point3Y))){
+        throw "Giving numbers cannot create a Triangle.";
+    }
+}
 
 double Triangle::area() const{
     double line1 = sqrt((point1X - point2X) * (point1X - point2X) + (point1Y - point2Y) * (point1Y - point2Y));

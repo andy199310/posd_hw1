@@ -16,6 +16,14 @@ TEST(basic, Circle){
 
     DOUBLES_EQUAL(10, circle.getRadius(), EPSILON);
 }
+TEST(exceptions, Circle){
+    try{
+        Circle circle(0, 0, -1);
+        CHECK(false);
+    }catch (char const* message){
+        CHECK(true);
+    }
+}
 
 TEST(area, Circle){
     Circle circle(0, 1, 10);

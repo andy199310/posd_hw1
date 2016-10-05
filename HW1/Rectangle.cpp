@@ -1,6 +1,10 @@
 #include "Rectangle.h"
 
-Rectangle::Rectangle(double x, double y, double width, double height):x(x), y(y), width(width), height(height){};
+Rectangle::Rectangle(double x, double y, double width, double height):x(x), y(y), width(width), height(height){
+    if(width <= 0 || height <= 0){
+        throw "Giving numbers cannot create a Rectangle.";
+    }
+};
 
 double Rectangle::getX() const{
     return x;
