@@ -17,7 +17,10 @@ set(SOURCE_FILES
         HW1/unitTest/utCircle.h
         HW1/unitTest/utRectangle.h
         HW1/unitTest/utshapeFunctoin.h
-        HW1/unitTest/utTriangle.h HW1/unitTest/utMain.h HW1/CompositeShape.cpp HW1/CompositeShape.h HW1/unitTest/utCompositeShape.h)
+        HW1/unitTest/utTriangle.h HW1/unitTest/utMain.h HW1/CompositeMedia.cpp HW1/CompositeMedia.h HW1/unitTest/utCompositeShape.h HW1/Media.cpp HW1/Media.h HW1/ShapeMedia.cpp HW1/ShapeMedia.h HW1/TextMedia.cpp HW1/TextMedia.h HW1/Text.cpp HW1/Text.h HW1/MediaVisitor.h HW1/AreaVisitor.cpp HW1/AreaVisitor.h)
+
+SET(BASEPATH "${CMAKE_SOURCE_DIR}")
+INCLUDE_DIRECTORIES("${BASEPATH}")
 
 add_executable(posd_hw1 ${SOURCE_FILES})
 

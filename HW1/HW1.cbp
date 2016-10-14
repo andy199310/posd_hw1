@@ -38,8 +38,8 @@
 		</Compiler>
 		<Unit filename="Circle.cpp" />
 		<Unit filename="Circle.h" />
-		<Unit filename="CompositeShape.cpp" />
-		<Unit filename="CompositeShape.h" />
+		<Unit filename="CompositeMedia.cpp" />
+		<Unit filename="CompositeMedia.h" />
 		<Unit filename="Rectangle.cpp" />
 		<Unit filename="Rectangle.h" />
 		<Unit filename="Shape.h" />
