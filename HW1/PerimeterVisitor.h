@@ -18,7 +18,7 @@ public:
     virtual double getTotalPerimeter();
 
 private:
-    double totalPerimeter;
+    double totalPerimeter = 0;
 };
 
 
