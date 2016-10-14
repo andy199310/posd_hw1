@@ -11,6 +11,8 @@ public:
 
     double perimeter() const;
 
+    virtual void accept(MediaVisitor &visitor) override;
+
 private:
     double point1X;
     double point1Y;

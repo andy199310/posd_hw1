@@ -26,3 +26,7 @@ double Triangle::perimeter() const{
 
     return line1 + line2 + line3;
 }
+
+void Triangle::accept(MediaVisitor &visitor) {
+
+}
