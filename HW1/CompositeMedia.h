@@ -8,21 +8,21 @@
 
 #include <vector>
 #include "Shape.h"
+class MediaVisitor;
 
-class CompositeShape : public Shape{
+class CompositeMedia : public Media{
 public:
-    CompositeShape();
+    CompositeMedia();
 
-    void add(Shape *shape);
+    void add(Media *shape);
     void remove(unsigned int index);
     int size() const;
-    Shape* at(unsigned int index) const;
+    Media* at(unsigned int index) const;
 
-    double area() const;
-    double perimeter() const;
+    virtual void accept(MediaVisitor* visitor) override;
 
 private:
-    std::vector<Shape *> shapeVector;
+    std::vector<Media *> mediaVector;
 
 };
 

@@ -10,5 +10,7 @@
 #include "utTriangle.h"
 #include "utshapeFunctoin.h"
 #include "utCompositeShape.h"
+#include "utAreaVisitor.h"
+#include "utPerimeterVisitor.h"
 
 #endif //POSD_HW1_UTMAIN_H

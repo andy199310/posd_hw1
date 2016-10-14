@@ -1,5 +1,7 @@
 #include "Circle.h"
 
+#include "AreaVisitor.h"
+
 Circle::Circle(double centerX, double centerY, double radius):centerX(centerX), centerY(centerY), radius(radius){
     if(radius <= 0){
         throw "Giving numbers cannot create a Circle.";
@@ -24,4 +26,8 @@ double Circle::area() const{
 
 double Circle::perimeter() const{
     return 2 * 3 * radius;
+}
+
+void Circle::accept(MediaVisitor *visitor) {
+    visitor->visit(this);
 }

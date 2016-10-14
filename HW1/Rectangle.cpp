@@ -1,5 +1,7 @@
 #include "Rectangle.h"
 
+#include "AreaVisitor.h"
+
 Rectangle::Rectangle(double x, double y, double width, double height):x(x), y(y), width(width), height(height){
     if(width <= 0 || height <= 0){
         throw "Giving numbers cannot create a Rectangle.";
@@ -28,4 +30,8 @@ double Rectangle::area() const{
 
 double Rectangle::perimeter() const{
     return 2 * (width + height);
+}
+
+void Rectangle::accept(MediaVisitor *visitor) {
+    visitor->visit(this);
 }
