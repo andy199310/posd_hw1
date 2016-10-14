@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Rectangle.h"
 
 #include "AreaVisitor.h"
@@ -34,6 +33,5 @@ double Rectangle::perimeter() const{
 }
 
 void Rectangle::accept(MediaVisitor *visitor) {
-    std::cout << "I am in rectangle!" << std::endl;
     visitor->visit(this);
 }

@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Circle.h"
 
 #include "AreaVisitor.h"
@@ -30,6 +29,5 @@ double Circle::perimeter() const{
 }
 
 void Circle::accept(MediaVisitor *visitor) {
-    std::cout << "I am in circle!" << std::endl;
     visitor->visit(this);
 }

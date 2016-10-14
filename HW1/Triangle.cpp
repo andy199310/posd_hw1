@@ -1,5 +1,4 @@
 #include <math.h>
-#include <iostream>
 
 #include "Triangle.h"
 #include "AreaVisitor.h"
@@ -30,6 +29,5 @@ double Triangle::perimeter() const{
 }
 
 void Triangle::accept(MediaVisitor *visitor) {
-    std::cout << "I am in triangle!" << std::endl;
     visitor->visit(this);
 }
