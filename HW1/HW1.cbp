@@ -36,18 +36,34 @@
 			<Add option="-Wall" />
 			<Add option="-std=c++11" />
 		</Compiler>
+		<Unit filename="AreaVisitor.cpp" />
+		<Unit filename="AreaVisitor.h" />
 		<Unit filename="Circle.cpp" />
 		<Unit filename="Circle.h" />
 		<Unit filename="CompositeMedia.cpp" />
 		<Unit filename="CompositeMedia.h" />
+		<Unit filename="Media.cpp" />
+		<Unit filename="Media.h" />
+		<Unit filename="MediaVisitor.h" />
+		<Unit filename="PerimeterVisitor.cpp" />
+		<Unit filename="PerimeterVisitor.h" />
 		<Unit filename="Rectangle.cpp" />
 		<Unit filename="Rectangle.h" />
 		<Unit filename="Shape.h" />
+		<Unit filename="ShapeMedia.cpp" />
+		<Unit filename="ShapeMedia.h" />
+		<Unit filename="Text.cpp" />
+		<Unit filename="Text.h" />
+		<Unit filename="TextMedia.cpp" />
+		<Unit filename="TextMedia.h" />
 		<Unit filename="Triangle.cpp" />
 		<Unit filename="Triangle.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="shapeFunction.cpp" />
 		<Unit filename="shapeFunction.h" />
+		<Unit filename="unitTest/utAreaVisitor.h">
+			<Option virtualFolder="unitTest/" />
+		</Unit>
 		<Unit filename="unitTest/utCircle.h">
 			<Option virtualFolder="unitTest/" />
 		</Unit>
@@ -55,6 +71,9 @@
 			<Option virtualFolder="unitTest/" />
 		</Unit>
 		<Unit filename="unitTest/utMain.h">
+			<Option virtualFolder="unitTest/" />
+		</Unit>
+		<Unit filename="unitTest/utPerimeterVisitor.h">
 			<Option virtualFolder="unitTest/" />
 		</Unit>
 		<Unit filename="unitTest/utRectangle.h">
