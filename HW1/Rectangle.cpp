@@ -1,4 +1,7 @@
+#include <iostream>
 #include "Rectangle.h"
+
+#include "AreaVisitor.h"
 
 Rectangle::Rectangle(double x, double y, double width, double height):x(x), y(y), width(width), height(height){
     if(width <= 0 || height <= 0){
@@ -28,4 +31,9 @@ double Rectangle::area() const{
 
 double Rectangle::perimeter() const{
     return 2 * (width + height);
+}
+
+void Rectangle::accept(MediaVisitor *visitor) {
+    std::cout << "I am in rectangle!" << std::endl;
+    visitor->visit(this);
 }

@@ -5,15 +5,14 @@
 #ifndef POSD_HW1_MEDIA_H
 #define POSD_HW1_MEDIA_H
 
-
-#include "MediaVisitor.h"
+class MediaVisitor;
 
 class Media {
 public:
-    virtual void bbox() = 0;
-    virtual void play() = 0;
+//    virtual void bbox() = 0;
+//    virtual void play() = 0;
 
-    virtual void accept(MediaVisitor&) = 0;
+    virtual void accept(MediaVisitor*) = 0;
 };
 
 

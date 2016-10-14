@@ -8,6 +8,7 @@
 
 #include <vector>
 #include "Shape.h"
+class MediaVisitor;
 
 class CompositeMedia : public Media{
 public:
@@ -18,7 +19,7 @@ public:
     int size() const;
     Media* at(unsigned int index) const;
 
-    virtual void accept(MediaVisitor& visitor) override;
+    virtual void accept(MediaVisitor* visitor) override;
 
 private:
     std::vector<Media *> mediaVector;

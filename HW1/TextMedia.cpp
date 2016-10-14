@@ -7,3 +7,7 @@
 void TextMedia::add(Text *shape) {
     textVector.push_back(shape);
 }
+
+void TextMedia::accept(MediaVisitor *visitor) {
+//TODO
+}
