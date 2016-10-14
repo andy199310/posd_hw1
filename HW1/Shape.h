@@ -2,7 +2,7 @@
 #define SHAPE_H_INCLUDED
 
 #include "Media.h"
-#include "MediaVisitor.h"
+class MediaVisitor;
 
 class Shape{
 public:
@@ -10,7 +10,7 @@ public:
 
     virtual double perimeter() const = 0;
 
-    virtual void accept(MediaVisitor&) = 0;
+    virtual void accept(MediaVisitor*) = 0;
 
 };
 

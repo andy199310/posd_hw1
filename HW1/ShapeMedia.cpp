@@ -12,7 +12,7 @@ int ShapeMedia::size() const {
     return shapeVector.size();
 }
 
-void ShapeMedia::accept(MediaVisitor &visitor) {
+void ShapeMedia::accept(MediaVisitor *visitor) {
     for(Shape* shapeMedia : shapeVector){
         shapeMedia->accept(visitor);
     }

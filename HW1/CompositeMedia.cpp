@@ -24,7 +24,7 @@ void CompositeMedia::remove(unsigned int index) {
     mediaVector.erase(mediaVector.begin() + index);
 }
 
-void CompositeMedia::accept(MediaVisitor& visitor) {
+void CompositeMedia::accept(MediaVisitor* visitor) {
     for(Media *media : mediaVector){
         media->accept(visitor);
     }

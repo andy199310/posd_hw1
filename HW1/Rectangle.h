@@ -16,6 +16,7 @@ public:
 
     double perimeter() const;
 
+    virtual void accept(MediaVisitor *visitor) override;
 
 private:
     double x;

@@ -10,14 +10,16 @@
 
 class AreaVisitor : public MediaVisitor{
 public:
-    virtual void visit(Rectangle rectangle) override;
+    virtual void visit(Rectangle *rectangle) override;
 
-    virtual void visit(Circle circle) override;
+    virtual void visit(Circle *circle) override;
 
-    virtual void visit(Triangle triangle) override;
+    virtual void visit(Triangle *triangle) override;
+
+    virtual double getTotalArea(void);
 
 private:
-    double totlaArea = 0;
+    double totalArea = 0;
 };
 
 

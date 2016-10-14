@@ -1,6 +1,8 @@
 #include <math.h>
+#include <iostream>
 
 #include "Triangle.h"
+#include "AreaVisitor.h"
 
 Triangle::Triangle(double point1X, double point1Y, double point2X, double point2Y, double point3X, double point3Y):
     point1X(point1X), point1Y(point1Y), point2X(point2X), point2Y(point2Y), point3X(point3X), point3Y(point3Y){
@@ -27,6 +29,7 @@ double Triangle::perimeter() const{
     return line1 + line2 + line3;
 }
 
-void Triangle::accept(MediaVisitor &visitor) {
-
+void Triangle::accept(MediaVisitor *visitor) {
+    std::cout << "I am in triangle!" << std::endl;
+    visitor->visit(this);
 }

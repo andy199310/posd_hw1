@@ -16,7 +16,7 @@ public:
 
     int size() const;
 
-    virtual void accept(MediaVisitor &visitor) override;
+    virtual void accept(MediaVisitor *visitor) override;
 
 private:
     std::vector<Shape *> shapeVector;

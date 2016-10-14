@@ -9,6 +9,7 @@
 #include <vector>
 #include "Media.h"
 #include "Text.h"
+class MediaVisitor;
 
 class TextMedia : public Media{
 public:
@@ -16,7 +17,7 @@ public:
 
     int size() const;
 
-    void findMe();
+    virtual void accept(MediaVisitor *visitor) override;
 
 private:
     std::vector<Text *> textVector;
