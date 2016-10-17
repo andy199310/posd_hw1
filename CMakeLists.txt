@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.6)
+cmake_minimum_required(VERSION 2.8)
 project(posd_hw1)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
@@ -24,7 +24,12 @@ INCLUDE_DIRECTORIES("${BASEPATH}")
 
 add_executable(posd_hw1 ${SOURCE_FILES})
 
+if(DEFINED ENV{TRAVIS})
+    add_library(libCppUnitLite cppunitlite/Failure.cpp cppunitlite/Failure.h cppunitlite/SimpleString.h cppunitlite/SimpleString.cpp cppunitlite/Test.h cppunitlite/Test.cpp cppunitlite/TestResult.h cppunitlite/TestRegistry.cpp cppunitlite/TestResult.cpp cppunitlite/TestRegistry.h)
+    target_link_libraries(posd_hw1 libCppUnitLite)
+else()
+    target_link_libraries(posd_hw1 ${CMAKE_SOURCE_DIR}/cppunitlite/libCppUnitLite.a)
+endif()
 # for CMake to build libCppUnitLite.a file (PS: need to dig into cache folder for lib)
 # add_library(libCppUnitLite cppunitlite/Failure.cpp cppunitlite/Failure.h cppunitlite/SimpleString.h cppunitlite/SimpleString.cpp cppunitlite/Test.h cppunitlite/Test.cpp cppunitlite/TestResult.h cppunitlite/TestRegistry.cpp cppunitlite/TestResult.cpp cppunitlite/TestRegistry.h)
 
-target_link_libraries(posd_hw1 ${CMAKE_SOURCE_DIR}/cppunitlite/libCppUnitLite.a)

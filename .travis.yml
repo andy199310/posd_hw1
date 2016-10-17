@@ -1,0 +1,29 @@
+language: cpp
+
+sudo: false
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+
+env:
+  - CXX=g++-4.8
+
+compiler:
+  - g++-4.8
+
+before_script:
+  - g++-4.8 --version
+  - export CXX=g++-4.8
+  - mkdir build
+  - cd build
+  - cmake --version
+  - cmake ..
+
+script:
+  - make
+  - ls
+  - ./posd_hw1
