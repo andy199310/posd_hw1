@@ -6,6 +6,6 @@ addons:
     packages:
       - cmake
 script:
-  - cmake
+  - cmake HW1
   - cd build
   - ./posd_hw1
