@@ -5,7 +5,7 @@ addons:
   apt:
     packages:
       - cmake
-scripts:
+script:
   - cmake
   - cd build
   - ./posd_hw1
