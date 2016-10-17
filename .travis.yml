@@ -1,11 +1,12 @@
 language: cpp
 
 sudo: false
-addons:
-  apt:
-    packages:
-      - cmake
-script:
-  - cmake HW1
+
+before_script:
+  - mkdir build
   - cd build
-  - ./posd_hw1
+  - cmake --version
+  - cmake ..
+
+script:
+  - make 
