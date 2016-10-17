@@ -2,10 +2,6 @@ language: cpp
 
 sudo: false
 
-os:
-  - linux
-  - osx
-
 addons:
   apt:
     sources:
@@ -19,15 +15,7 @@ env:
 compiler:
   - g++-4.8
 
-#addon:
-#  apt:
-#   sources:
-#    - ubuntu-toolchain-r-test
-#   packages:
-#    - g++-4.8
-
 before_script:
-  - g++ --version
   - g++-4.8 --version
   - export CXX=g++-4.8
   - mkdir build
