@@ -3,7 +3,7 @@ language: cpp
 sudo: false
 
 compiler:
-  - gcc-4.8
+  - g++-4.8
 
 #addon:
 #  apt:
