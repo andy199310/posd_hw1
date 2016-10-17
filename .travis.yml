@@ -2,6 +2,10 @@ language: cpp
 
 sudo: false
 
+os:
+  - linux
+  - osx
+
 addons:
   apt:
     sources:
@@ -33,3 +37,5 @@ before_script:
 
 script:
   - make
+  - ls
+  - ./posd_hw1
