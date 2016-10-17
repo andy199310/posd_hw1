@@ -2,12 +2,15 @@ language: cpp
 
 sudo: false
 
-addon:
-  apt:
-   sources:
-   - ubuntu-toolchain-r-test
-   packages:
-   - g++-4.8
+compiler:
+  - gcc-4.8
+
+#addon:
+#  apt:
+#   sources:
+#    - ubuntu-toolchain-r-test
+#   packages:
+#    - g++-4.8
 
 before_script:
   - mkdir build
