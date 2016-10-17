@@ -11,7 +11,7 @@ addons:
 
 env:
   - CXX=g++-4.8
-  
+
 compiler:
   - g++-4.8
 
@@ -23,6 +23,9 @@ compiler:
 #    - g++-4.8
 
 before_script:
+  - g++ --version
+  - g++-4.8 --version
+  - export CXX=g++-4.8
   - mkdir build
   - cd build
   - cmake --version
