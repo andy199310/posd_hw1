@@ -1,0 +1,6 @@
+language: cpp
+
+scripts:
+  cmake
+  cd build
+  ./posd_hw1
