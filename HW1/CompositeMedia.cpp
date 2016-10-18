@@ -3,6 +3,7 @@
 //
 
 #include "CompositeMedia.h"
+#include "MediaVisitor.h"
 
 CompositeMedia::CompositeMedia() {
 
@@ -28,5 +29,6 @@ void CompositeMedia::accept(MediaVisitor* visitor) {
     for(Media *media : mediaVector){
         media->accept(visitor);
     }
+    visitor->visit(this);
 }
 

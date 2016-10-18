@@ -7,9 +7,12 @@
 
 
 #include <string>
+class MediaVisitor;
 
 class Text {
 public:
+    void accept(MediaVisitor*);
+
     std::string name;
 };
 

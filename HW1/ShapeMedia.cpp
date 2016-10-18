@@ -3,6 +3,7 @@
 //
 
 #include "ShapeMedia.h"
+#include "MediaVisitor.h"
 
 void ShapeMedia::add(Shape *shape) {
     shapeVector.push_back(shape);
@@ -16,5 +17,6 @@ void ShapeMedia::accept(MediaVisitor *visitor) {
     for(Shape* shapeMedia : shapeVector){
         shapeMedia->accept(visitor);
     }
+    visitor->visit(this);
 }
 

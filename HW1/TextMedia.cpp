@@ -3,11 +3,15 @@
 //
 
 #include "TextMedia.h"
+#include "MediaVisitor.h"
 
 void TextMedia::add(Text *shape) {
     textVector.push_back(shape);
 }
 
 void TextMedia::accept(MediaVisitor *visitor) {
-//TODO
+    for(Text* text : textVector){
+        text->accept(visitor);
+    }
+    visitor->visit(this);
 }

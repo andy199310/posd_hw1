@@ -7,6 +7,14 @@
 #include "Circle.h"
 #include "Triangle.h"
 
+void PerimeterVisitor::visit(CompositeMedia *media) {
+    //nothing
+}
+
+void PerimeterVisitor::visit(ShapeMedia *media) {
+    //nothing
+}
+
 void PerimeterVisitor::visit(Rectangle *rectangle) {
     totalPerimeter += rectangle->perimeter();
 }
@@ -21,4 +29,12 @@ void PerimeterVisitor::visit(Triangle *triangle) {
 
 double PerimeterVisitor::getTotalPerimeter() {
     return totalPerimeter;
+}
+
+void PerimeterVisitor::visit(TextMedia *media) {
+    //nothing
+}
+
+void PerimeterVisitor::visit(Text *text) {
+    //nothing
 }

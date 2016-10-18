@@ -7,6 +7,15 @@
 #include "Circle.h"
 #include "Triangle.h"
 
+void AreaVisitor::visit(CompositeMedia *media) {
+    // nothing
+}
+
+void AreaVisitor::visit(ShapeMedia *media) {
+    // nothing
+
+}
+
 void AreaVisitor::visit(Rectangle *rectangle) {
     totalArea += rectangle->area();
 }
@@ -17,6 +26,14 @@ void AreaVisitor::visit(Circle *circle) {
 
 void AreaVisitor::visit(Triangle *triangle) {
     totalArea += triangle->area();
+}
+
+void AreaVisitor::visit(TextMedia *media) {
+    // nothing
+}
+
+void AreaVisitor::visit(Text *text) {
+    // nothing
 }
 
 double AreaVisitor::getTotalArea(void) {

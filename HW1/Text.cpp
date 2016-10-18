@@ -3,3 +3,7 @@
 //
 
 #include "Text.h"
+
+void Text::accept(MediaVisitor *) {
+    //nothing
+}
