@@ -23,7 +23,8 @@ before_script:
   - cmake --version
   - cmake ..
 
-script:
+install:
   - make
   - ls
-  - ./posd_hw1
+
+script: travis.sh
