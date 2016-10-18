@@ -24,5 +24,7 @@ install:
   - cmake ..
   - make
   - ls
+  - cd ..
+  - ls
 
 script: ./travis.sh

@@ -1,4 +1,5 @@
 #!/bin/sh
+cd build
 ./posd_hw1 | tee output.txt
 echo "Program Ended!"
 tail output.txt
