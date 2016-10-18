@@ -26,5 +26,6 @@ install:
   - ls
   - cd ..
   - ls
+  - chmod +x travis.sh
 
 script: ./travis.sh
