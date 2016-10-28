@@ -12,7 +12,6 @@
 #include "../Triangle.h"
 #include "../ShapeMedia.h"
 #include "../CompositeMedia.h"
-#include "../PerimeterVisitor.h"
 #include "../../cppunitlite/TestHarness.h"
 
 TEST(oneLevelOneItem, DescriptionVisitor){
