@@ -2,6 +2,7 @@
 #define SHAPE_H_INCLUDED
 
 #include "Media.h"
+#include <string>
 class MediaVisitor;
 
 class Shape{
@@ -11,6 +12,8 @@ public:
     virtual double perimeter() const = 0;
 
     virtual void accept(MediaVisitor*) = 0;
+
+    virtual std::string toString() = 0;
 
 };
 

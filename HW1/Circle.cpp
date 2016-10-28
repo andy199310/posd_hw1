@@ -1,3 +1,4 @@
+#include <sstream>
 #include "Circle.h"
 
 #include "AreaVisitor.h"
@@ -30,4 +31,10 @@ double Circle::perimeter() const{
 
 void Circle::accept(MediaVisitor *visitor) {
     visitor->visit(this);
+}
+
+std::string Circle::toString() {
+    std::stringstream stringStream;
+    stringStream << "Circle(" << centerX << ", " << centerY << ", " << radius << ")";
+    return stringStream.str();
 }

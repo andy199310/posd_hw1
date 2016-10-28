@@ -13,6 +13,8 @@ public:
 
     virtual void accept(MediaVisitor *visitor) override;
 
+    virtual std::string toString() override;
+
 private:
     double point1X;
     double point1Y;

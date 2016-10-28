@@ -1,3 +1,4 @@
+#include <sstream>
 #include "Rectangle.h"
 
 #include "AreaVisitor.h"
@@ -35,3 +36,10 @@ double Rectangle::perimeter() const{
 void Rectangle::accept(MediaVisitor *visitor) {
     visitor->visit(this);
 }
+
+std::string Rectangle::toString() {
+    std::stringstream stringStream;
+    stringStream << "Rectangle(" << x << ", " << y << ", " << width << ", " << height << ")";
+    return stringStream.str();
+}
+

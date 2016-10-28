@@ -1,4 +1,5 @@
 #include <math.h>
+#include <sstream>
 
 #include "Triangle.h"
 #include "AreaVisitor.h"
@@ -30,4 +31,10 @@ double Triangle::perimeter() const{
 
 void Triangle::accept(MediaVisitor *visitor) {
     visitor->visit(this);
+}
+
+std::string Triangle::toString() {
+    std::stringstream stringStream;
+    stringStream << "Triangle(" << point1X << ", " << point1Y << ", " << point2X << ", " << point2Y << ", "<< point3X << ", " << point3Y << ")";
+    return stringStream.str();
 }

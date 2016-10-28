@@ -18,6 +18,8 @@ public:
 
     virtual void accept(MediaVisitor *visitor) override;
 
+    virtual std::string toString() override;
+
 private:
     double x;
     double y;
