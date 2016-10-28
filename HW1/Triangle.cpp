@@ -35,6 +35,6 @@ void Triangle::accept(MediaVisitor *visitor) {
 
 std::string Triangle::toString() {
     std::stringstream stringStream;
-    stringStream << "Triangle(" << point1X << ", " << point1Y << ", " << point2X << ", " << point2Y << ", "<< point3X << ", " << point3Y << ")";
+    stringStream << "Triangle(" << point1X << "," << point1Y << "," << point2X << "," << point2Y << ","<< point3X << "," << point3Y << ")";
     return stringStream.str();
 }

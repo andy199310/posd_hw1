@@ -35,6 +35,6 @@ void Circle::accept(MediaVisitor *visitor) {
 
 std::string Circle::toString() {
     std::stringstream stringStream;
-    stringStream << "Circle(" << centerX << ", " << centerY << ", " << radius << ")";
+    stringStream << "Circle(" << centerX << "," << centerY << "," << radius << ")";
     return stringStream.str();
 }

@@ -12,5 +12,6 @@
 #include "utCompositeShape.h"
 #include "utAreaVisitor.h"
 #include "utPerimeterVisitor.h"
+#include "utDescriptionVisitor.h"
 
 #endif //POSD_HW1_UTMAIN_H

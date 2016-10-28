@@ -39,7 +39,7 @@ void Rectangle::accept(MediaVisitor *visitor) {
 
 std::string Rectangle::toString() {
     std::stringstream stringStream;
-    stringStream << "Rectangle(" << x << ", " << y << ", " << width << ", " << height << ")";
+    stringStream << "Rectangle(" << x << "," << y << "," << width << "," << height << ")";
     return stringStream.str();
 }
 
