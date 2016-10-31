@@ -7,7 +7,6 @@
 
 #define EPSILON 0.001
 
-#include "../CountingVisitor.h"
 #include "../Rectangle.h"
 #include "../Triangle.h"
 #include "../ShapeMedia.h"
@@ -29,9 +28,6 @@ TEST(totalPerimeter, PerimeterVisitor){
 
     PerimeterVisitor hexagonPerimeterVisitor;
     hexagonComposite.accept(&hexagonPerimeterVisitor);
-
-    CountingVisitor countingVisitor;
-    hexagonComposite.accept(&countingVisitor);
 
     DOUBLES_EQUAL(25.8558, hexagonPerimeterVisitor.getTotalPerimeter(), EPSILON);
 }
