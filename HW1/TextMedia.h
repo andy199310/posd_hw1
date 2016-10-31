@@ -13,6 +13,8 @@ class MediaVisitor;
 
 class TextMedia : public Media{
 public:
+    virtual void add(Media *shape) override;
+
     void add(Text *shape);
 
     int size() const;

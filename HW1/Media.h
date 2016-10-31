@@ -12,6 +12,8 @@ public:
 //    virtual void bbox() = 0;
 //    virtual void play() = 0;
 
+    virtual void add(Media *shape) = 0;
+
     virtual void accept(MediaVisitor*) = 0;
 };
 

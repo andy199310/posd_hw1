@@ -12,6 +12,8 @@
 
 class ShapeMedia : public Media{
 public:
+    virtual void add(Media* media) override;
+
     void add(Shape *shape);
 
     int size() const;

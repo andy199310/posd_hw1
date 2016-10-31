@@ -7,13 +7,24 @@
 
 
 #include <string>
+#include "Rectangle.h"
+
 class MediaVisitor;
 
 class Text {
-public:
-    void accept(MediaVisitor*);
+private:
+    std::string text;
+    Rectangle boundingBox;
 
-    std::string name;
+public:
+    Text(Rectangle boundingBox, std::string text);
+
+    void accept(MediaVisitor* mediaVisitor);
+
+    virtual std::string getText();
+
+    virtual Rectangle getBoundingBox();
+
 };
 
 

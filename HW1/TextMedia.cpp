@@ -15,3 +15,7 @@ void TextMedia::accept(MediaVisitor *visitor) {
     }
     visitor->visit(this);
 }
+
+void TextMedia::add(Media *shape) {
+    throw "Cannot add Media with TextMedia";
+}

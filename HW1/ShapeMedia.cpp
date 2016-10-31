@@ -20,3 +20,7 @@ void ShapeMedia::accept(MediaVisitor *visitor) {
     visitor->visit(this);
 }
 
+void ShapeMedia::add(Media *media) {
+    throw "Cannot add Media with ShapeMedia";
+}
+

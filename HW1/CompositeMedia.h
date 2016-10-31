@@ -14,7 +14,7 @@ class CompositeMedia : public Media{
 public:
     CompositeMedia();
 
-    void add(Media *shape);
+    void add(Media *shape) override;
     void remove(unsigned int index);
     int size() const;
     Media* at(unsigned int index) const;
