@@ -5,6 +5,7 @@
 #ifndef POSD_HW1_UTCOMPOSITESHAPE_H
 #define POSD_HW1_UTCOMPOSITESHAPE_H
 
+#include "../DescriptionVisitor.h"
 #include "../../cppunitlite/Test.h"
 #include "../Triangle.h"
 #include "../CompositeMedia.h"
@@ -33,27 +34,36 @@ TEST(basic_one_level, CompositeShape){
     LONGS_EQUAL(3, compositeMedia.size());
 }
 
-TEST(basic_two_level, CompositeShape){
-//    CompositeMedia compositeShapeLevelTwo;
-//
-//    Rectangle rectangle(0, 5, 10, 5);
-//    Circle circle(0, 1, 10);
-//    Triangle triangle(0, 0, 0, 1, 1, 0);
-//
-//    compositeShapeLevelTwo.add(&rectangle);
-//    compositeShapeLevelTwo.add(&circle);
-//    compositeShapeLevelTwo.add(&triangle);
-//
-//    CompositeMedia compositeShapeLevelOne;
-//    Rectangle rectangleOne(0, 5, 5, 5);
-//    compositeShapeLevelOne.add(&compositeShapeLevelTwo);
-//    compositeShapeLevelOne.add(&rectangleOne);
-//
-//    LONGS_EQUAL(2, compositeShapeLevelOne.size());
-//
-//    DOUBLES_EQUAL(375.5, compositeShapeLevelOne.area(), EPSILON);
-//
-//    DOUBLES_EQUAL(113.414, compositeShapeLevelOne.perimeter(), EPSILON);
+TEST(remove, CompositeShape){
+
+    ShapeMedia *shapeMediaRectangle1 = new ShapeMedia(new Rectangle(10, 0, 15, 5));
+    ShapeMedia *shapeMediaCircle1 = new ShapeMedia(new Circle(12, 5, 2));
+    CompositeMedia *compositeMedia1 = new CompositeMedia;
+    compositeMedia1->add(shapeMediaRectangle1);
+    compositeMedia1->add(shapeMediaCircle1);
+
+    ShapeMedia *shapeMediaRectangle2 = new ShapeMedia(new Rectangle(0, 0, 25, 20));
+    CompositeMedia *compositeMedia2 = new CompositeMedia;
+    compositeMedia2->add(compositeMedia1);
+    compositeMedia2->add(shapeMediaRectangle2);
+
+    ShapeMedia *shapeMediaTriangle = new ShapeMedia(new Triangle(0, 20, 16, 32, 25, 20));
+
+    CompositeMedia *compositeMedia3 = new CompositeMedia;
+    compositeMedia3->add(compositeMedia2);
+    compositeMedia3->add(shapeMediaTriangle);
+
+    DescriptionVisitor descriptionVisitor;
+    compositeMedia3->accept(&descriptionVisitor);
+
+    CHECK("combo(combo(combo(r(10 0 15 5) c(12 5 2) )r(0 0 25 20) )t(0 20 16 32 25 20) )" == descriptionVisitor.getDescription());
+
+    compositeMedia3->remove(shapeMediaRectangle2);
+
+    DescriptionVisitor descriptionVisitorAfter;
+    compositeMedia3->accept(&descriptionVisitorAfter);
+
+    CHECK("combo(combo(combo(r(10 0 15 5) c(12 5 2) ))t(0 20 16 32 25 20) )" == descriptionVisitorAfter.getDescription());
 
 }
 

@@ -9,10 +9,10 @@ class MediaVisitor;
 
 class Media {
 public:
-//    virtual void bbox() = 0;
-//    virtual void play() = 0;
 
     virtual void add(Media *shape) = 0;
+
+    virtual bool remove(Media *removeMedia) = 0;
 
     virtual void accept(MediaVisitor*) = 0;
 };

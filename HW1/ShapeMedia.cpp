@@ -22,3 +22,7 @@ Shape *ShapeMedia::getShape() {
     return _shape;
 }
 
+bool ShapeMedia::remove(Media *removeMedia) {
+    return false;
+}
+

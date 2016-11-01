@@ -14,5 +14,6 @@
 #include "utPerimeterVisitor.h"
 #include "utDescriptionVisitor.h"
 #include "utMediaBuilder.h"
+#include "utText.h"
 
 #endif //POSD_HW1_UTMAIN_H
