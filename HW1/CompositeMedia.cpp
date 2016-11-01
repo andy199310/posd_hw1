@@ -2,7 +2,6 @@
 // Created by Green on 2016/10/4.
 //
 
-#include <iostream>
 #include "CompositeMedia.h"
 #include "MediaVisitor.h"
 
