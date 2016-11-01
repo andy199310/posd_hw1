@@ -32,3 +32,19 @@ void CompositeMedia::accept(MediaVisitor* visitor) {
     visitor->visit(this);
 }
 
+bool CompositeMedia::remove(Media *removeMedia) {
+    int index = 0;
+    for(Media *media : mediaVector){
+        if(media == removeMedia){
+            mediaVector.erase(mediaVector.begin() + index);
+            return true;
+        }
+        if(media->remove(removeMedia)){
+
+            return true;
+        }
+        index++;
+    }
+    return false;
+}
+

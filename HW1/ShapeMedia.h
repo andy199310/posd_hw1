@@ -16,6 +16,8 @@ public:
 
     virtual void add(Media* media) override;
 
+    virtual bool remove(Media *removeMedia) override;
+
     virtual Shape* getShape();
 
     virtual void accept(MediaVisitor *visitor) override;

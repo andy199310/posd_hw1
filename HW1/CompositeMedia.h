@@ -16,6 +16,9 @@ public:
 
     void add(Media *shape) override;
     void remove(unsigned int index);
+
+    virtual bool remove(Media *removeMedia) override;
+
     int size() const;
     Media* at(unsigned int index) const;
 

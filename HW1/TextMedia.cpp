@@ -22,3 +22,7 @@ TextMedia::TextMedia(Text *text) {
 Text *TextMedia::getText() {
     return _text;
 }
+
+bool TextMedia::remove(Media *removeMedia) {
+    return false;
+}
