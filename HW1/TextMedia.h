@@ -13,16 +13,16 @@ class MediaVisitor;
 
 class TextMedia : public Media{
 public:
+    TextMedia(Text *text);
+
     virtual void add(Media *shape) override;
-
-    void add(Text *shape);
-
-    int size() const;
 
     virtual void accept(MediaVisitor *visitor) override;
 
+    virtual Text* getText();
+
 private:
-    std::vector<Text *> textVector;
+    Text *_text;
 };
 
 

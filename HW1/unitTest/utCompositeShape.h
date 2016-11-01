@@ -6,6 +6,7 @@
 #define POSD_HW1_UTCOMPOSITESHAPE_H
 
 #include "../../cppunitlite/Test.h"
+#include "../Triangle.h"
 #include "../CompositeMedia.h"
 #include "../Rectangle.h"
 #include "../Circle.h"
@@ -14,18 +15,22 @@
 #define EPSILON 0.001
 
 TEST(basic_one_level, CompositeShape){
-    ShapeMedia shapeMedia;
+
 
     Rectangle rectangle(0, 5, 10, 5);
     Circle circle(0, 1, 10);
     Triangle triangle(0, 0, 0, 1, 1, 0);
 
-    shapeMedia.add(&rectangle);
-    shapeMedia.add(&circle);
-    shapeMedia.add(&triangle);
+    ShapeMedia shapeMedia1(&rectangle);
+    ShapeMedia shapeMedia2(&circle);
+    ShapeMedia shapeMedia3(&triangle);
 
-    LONGS_EQUAL(3, shapeMedia.size());
+    CompositeMedia compositeMedia;
+    compositeMedia.add(&shapeMedia1);
+    compositeMedia.add(&shapeMedia2);
+    compositeMedia.add(&shapeMedia3);
 
+    LONGS_EQUAL(3, compositeMedia.size());
 }
 
 TEST(basic_two_level, CompositeShape){

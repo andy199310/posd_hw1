@@ -12,7 +12,7 @@
 
 void DescriptionVisitor::visit(CompositeMedia *media) {
     std::stringstream stringStream;
-    stringStream << "CompositeMedia(";
+    stringStream << "combo(";
     std::stack<std::string> reverseStack;
     for(int i=0; i<media->size(); i++){
         reverseStack.push(descriptionStack.top());
@@ -27,19 +27,7 @@ void DescriptionVisitor::visit(CompositeMedia *media) {
 }
 
 void DescriptionVisitor::visit(ShapeMedia *media) {
-    std::stringstream stringStream;
-    stringStream << "ShapeMedia(";
-    std::stack<std::string> reverseStack;
-    for(int i=0; i<media->size(); i++){
-        reverseStack.push(descriptionStack.top());
-        descriptionStack.pop();
-    }
-    while(reverseStack.size() > 0){
-        stringStream << reverseStack.top();
-        reverseStack.pop();
-    }
-    stringStream << ")";
-    descriptionStack.push(stringStream.str());
+    // nothing
 }
 
 void DescriptionVisitor::visit(Rectangle *rectangle) {
@@ -55,11 +43,12 @@ void DescriptionVisitor::visit(Triangle *triangle) {
 }
 
 void DescriptionVisitor::visit(TextMedia *media) {
-
+    // nothing
 }
 
 void DescriptionVisitor::visit(Text *text) {
-
+    //TODO text
+    descriptionStack.push("Text");
 }
 
 std::string DescriptionVisitor::getDescription() const {

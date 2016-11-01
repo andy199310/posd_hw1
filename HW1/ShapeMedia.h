@@ -12,16 +12,16 @@
 
 class ShapeMedia : public Media{
 public:
+    ShapeMedia(Shape* shape);
+
     virtual void add(Media* media) override;
 
-    void add(Shape *shape);
-
-    int size() const;
+    virtual Shape* getShape();
 
     virtual void accept(MediaVisitor *visitor) override;
 
 private:
-    std::vector<Shape *> shapeVector;
+    Shape* _shape;
 };
 
 

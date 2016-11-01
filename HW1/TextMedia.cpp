@@ -5,17 +5,20 @@
 #include "TextMedia.h"
 #include "MediaVisitor.h"
 
-void TextMedia::add(Text *shape) {
-    textVector.push_back(shape);
-}
 
 void TextMedia::accept(MediaVisitor *visitor) {
-    for(Text* text : textVector){
-        text->accept(visitor);
-    }
+    _text->accept(visitor);
     visitor->visit(this);
 }
 
 void TextMedia::add(Media *shape) {
     throw "Cannot add Media with TextMedia";
+}
+
+TextMedia::TextMedia(Text *text) {
+    _text = text;
+}
+
+Text *TextMedia::getText() {
+    return _text;
 }

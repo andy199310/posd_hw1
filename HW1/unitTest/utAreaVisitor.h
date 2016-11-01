@@ -19,13 +19,14 @@ TEST(totalArea, AreaVisitor){
     Rectangle middleRectangle(0, 0, 2, 3.464);
     Triangle leftTriangle(0, 0, -1, 1.732, 0, 3.464);
     Triangle rightTriangle(2, 0, 2, 3.464, 3, 1.732);
-    ShapeMedia hexagonShape;
-    hexagonShape.add(&middleRectangle);
-    hexagonShape.add(&leftTriangle);
-    hexagonShape.add(&rightTriangle);
+    ShapeMedia shapeMediaMiddleRectangle(&middleRectangle);
+    ShapeMedia shapeMediaLeftTriangle(&leftTriangle);
+    ShapeMedia shapeMediaRightTriangle(&rightTriangle);
 
     CompositeMedia hexagonComposite;
-    hexagonComposite.add(&hexagonShape);
+    hexagonComposite.add(&shapeMediaMiddleRectangle);
+    hexagonComposite.add(&shapeMediaLeftTriangle);
+    hexagonComposite.add(&shapeMediaRightTriangle);
 
     AreaVisitor hexagonAreaVisitor;
     hexagonComposite.accept(&hexagonAreaVisitor);
