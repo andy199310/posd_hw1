@@ -18,16 +18,14 @@
 TEST(basic, MediaBuilder){
     MediaBuilder mediaBuilder;
 
-    mediaBuilder.buildCompositeMedia();
     mediaBuilder.buildCircle(0, 0, 5);
-    mediaBuilder.levelDone();
 
     Media *media = mediaBuilder.getBaseShape();
 
     DescriptionVisitor descriptionVisitor;
     media->accept(&descriptionVisitor);
 
-    CHECK("combo(c(0 0 5) )" == descriptionVisitor.getDescription())
+    CHECK("c(0 0 5) " == descriptionVisitor.getDescription())
 }
 
 TEST(multipleLevel, MediaBuilder){
@@ -38,11 +36,11 @@ TEST(multipleLevel, MediaBuilder){
     mediaBuilder.buildCompositeMedia();
     mediaBuilder.buildRectangle(10, 0, 15, 5);
     mediaBuilder.buildCircle(12, 5, 2);
-    mediaBuilder.levelDone();
+    mediaBuilder.levelDone(2);
     mediaBuilder.buildRectangle(0, 0, 25, 20);
-    mediaBuilder.levelDone();
+    mediaBuilder.levelDone(2);
     mediaBuilder.buildTriangle(0, 20, 16, 32, 25, 20);
-    mediaBuilder.levelDone();
+    mediaBuilder.levelDone(2);
 
 
     Media *media = mediaBuilder.getBaseShape();

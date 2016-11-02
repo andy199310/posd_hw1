@@ -15,11 +15,18 @@ MediaBuilder::MediaBuilder() {
 //    baseMediaStack.push(new CompositeMedia());
 }
 
-void MediaBuilder::levelDone() {
-    if(baseMediaStack.size() > 1){
-        Media *media = baseMediaStack.top();
-        baseMediaStack.pop();
-        baseMediaStack.top()->add(media);
+void MediaBuilder::levelDone(int childrenCount) {
+    std::stack<Media*> reverseStack;
+    for(int i=0; i<childrenCount; i++){
+        if(baseMediaStack.size() > 1){
+            Media *media = baseMediaStack.top();
+            reverseStack.push(media);
+            baseMediaStack.pop();
+        }
+    }
+    while(!reverseStack.empty()){
+        baseMediaStack.top()->add(reverseStack.top());
+        reverseStack.pop();
     }
 }
 
@@ -33,15 +40,15 @@ void MediaBuilder::buildShapeMedia() {
 }
 
 void MediaBuilder::buildRectangle(double x, double y, double width, double height) {
-    baseMediaStack.top()->add(new ShapeMedia(new Rectangle(x, y, width, height)));
+    baseMediaStack.push(new ShapeMedia(new Rectangle(x, y, width, height)));
 }
 
 void MediaBuilder::buildCircle(double centerX, double centerY, double radius) {
-    baseMediaStack.top()->add(new ShapeMedia(new Circle(centerX, centerY, radius)));
+    baseMediaStack.push(new ShapeMedia(new Circle(centerX, centerY, radius)));
 }
 
 void MediaBuilder::buildTriangle(double point1X, double point1Y, double point2X, double point2Y, double point3X, double point3Y) {
-    baseMediaStack.top()->add(new ShapeMedia(new Triangle(point1X, point1Y, point2X, point2Y, point3X, point3Y)));
+    baseMediaStack.push(new ShapeMedia(new Triangle(point1X, point1Y, point2X, point2Y, point3X, point3Y)));
 }
 
 Media *MediaBuilder::getBaseShape() {

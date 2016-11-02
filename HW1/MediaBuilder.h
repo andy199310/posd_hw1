@@ -15,7 +15,7 @@ private:
 public:
     MediaBuilder();
 
-    virtual void levelDone();
+    virtual void levelDone(int childrenCount);
 
     virtual void buildCompositeMedia();
 
