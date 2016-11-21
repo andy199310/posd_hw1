@@ -46,11 +46,16 @@
 		<Unit filename="CountingVisitor.h" />
 		<Unit filename="DescriptionVisitor.cpp" />
 		<Unit filename="DescriptionVisitor.h" />
+		<Unit filename="Document.h" />
 		<Unit filename="Media.cpp" />
 		<Unit filename="Media.h" />
 		<Unit filename="MediaBuilder.cpp" />
 		<Unit filename="MediaBuilder.h" />
+		<Unit filename="MediaDirector.cpp" />
+		<Unit filename="MediaDirector.h" />
 		<Unit filename="MediaVisitor.h" />
+		<Unit filename="MyDocument.cpp" />
+		<Unit filename="MyDocument.h" />
 		<Unit filename="PerimeterVisitor.cpp" />
 		<Unit filename="PerimeterVisitor.h" />
 		<Unit filename="Rectangle.cpp" />
@@ -83,6 +88,12 @@
 			<Option virtualFolder="unitTest/" />
 		</Unit>
 		<Unit filename="unitTest/utMediaBuilder.h">
+			<Option virtualFolder="unitTest/" />
+		</Unit>
+		<Unit filename="unitTest/utMediaDirector.h">
+			<Option virtualFolder="unitTest/" />
+		</Unit>
+		<Unit filename="unitTest/utMyDocument.h">
 			<Option virtualFolder="unitTest/" />
 		</Unit>
 		<Unit filename="unitTest/utPerimeterVisitor.h">

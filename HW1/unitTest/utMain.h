@@ -15,5 +15,7 @@
 #include "utDescriptionVisitor.h"
 #include "utMediaBuilder.h"
 #include "utText.h"
+#include "utMyDocument.h"
+#include "utMediaDirector.h"
 
 #endif //POSD_HW1_UTMAIN_H
