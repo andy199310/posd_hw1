@@ -11,13 +11,10 @@ MediaDirector::MediaDirector(MediaBuilder *mediaBuilder) {
 }
 
 void MediaDirector::construct(std::string string) {
-    std::stack<int> childCountStack;
-    childCountStack.push(0);
     while(string.length()){
         if(startWith(string, std::string("combo("))){
             _mediaBuilder->buildCompositeMedia();
             string = string.substr(6);
-            childCountStack.push(0);
             continue;
         }
         if(startWith(string, std::string("r("))){
@@ -28,7 +25,6 @@ void MediaDirector::construct(std::string string) {
             _mediaBuilder->buildRectangle(arguments->at(0), arguments->at(1), arguments->at(2), arguments->at(3));
 
             string = string.substr(endIndex + 2);
-            childCountStack.top() += 1;
             continue;
         }
         if(startWith(string, std::string("c("))){
@@ -39,7 +35,6 @@ void MediaDirector::construct(std::string string) {
             _mediaBuilder->buildCircle(arguments->at(0), arguments->at(1), arguments->at(2));
 
             string = string.substr(endIndex + 2);
-            childCountStack.top() += 1;
             continue;
         }
         if(startWith(string, std::string("t("))){
@@ -50,16 +45,13 @@ void MediaDirector::construct(std::string string) {
             _mediaBuilder->buildTriangle(arguments->at(0), arguments->at(1), arguments->at(2), arguments->at(3), arguments->at(4), arguments->at(5));
 
             string = string.substr(endIndex + 2);
-            childCountStack.top() += 1;
             continue;
         }
 
 
         if(startWith(string, std::string(")"))){
-            _mediaBuilder->levelDone(childCountStack.top());
+            _mediaBuilder->levelDone();
             string = string.substr(1);
-            childCountStack.pop();
-            childCountStack.top() += 1;
             continue;
         }
     }

@@ -36,11 +36,11 @@ TEST(multipleLevel, MediaBuilder){
     mediaBuilder.buildCompositeMedia();
     mediaBuilder.buildRectangle(10, 0, 15, 5);
     mediaBuilder.buildCircle(12, 5, 2);
-    mediaBuilder.levelDone(2);
+    mediaBuilder.levelDone();
     mediaBuilder.buildRectangle(0, 0, 25, 20);
-    mediaBuilder.levelDone(2);
+    mediaBuilder.levelDone();
     mediaBuilder.buildTriangle(0, 20, 16, 32, 25, 20);
-    mediaBuilder.levelDone(2);
+    mediaBuilder.levelDone();
 
 
     Media *media = mediaBuilder.getBaseShape();

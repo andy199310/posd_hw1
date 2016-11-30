@@ -12,10 +12,11 @@
 class MediaBuilder {
 private:
     std::stack<Media*> baseMediaStack;
+    std::stack<int> childrenCountStack;
 public:
     MediaBuilder();
 
-    virtual void levelDone(int childrenCount);
+    virtual void levelDone();
 
     virtual void buildCompositeMedia();
 
