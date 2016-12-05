@@ -1,4 +1,3 @@
-#include <iostream>
 #include "../cppunitlite/TestHarness.h"
 #include "unitTest/utMain.h"
 

@@ -25,5 +25,7 @@
 #include "Command/utShowCommand.h"
 #include "Command/utAddCommand.h"
 #include "Command/utDeleteCommand.h"
+#include "Command/utSaveCommand.h"
+#include "Command/utLoadCommand.h"
 
 #endif //POSD_HW1_UTMAIN_H

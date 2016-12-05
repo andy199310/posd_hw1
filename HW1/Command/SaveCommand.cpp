@@ -7,11 +7,11 @@
 #include "CommandFunction.h"
 #include <iostream>
 #include <fstream>
-#include <HW1/DescriptionNameVisitor.h>
+#include "../DescriptionNameVisitor.h"
 #include "../DescriptionVisitor.h"
 #include "../Execption/NameNotFoundException.h"
 
-SaveCommand::SaveCommand(Application *application, Shell *shell):_application(application),_shell(shell){
+SaveCommand::SaveCommand(Application *application):_application(application){
 
 }
 
@@ -34,7 +34,6 @@ void SaveCommand::execute(std::string command) {
     DescriptionNameVisitor descriptionNameVisitor(_application);
     media->accept(&descriptionNameVisitor);
     std::string descriptionNameString = descriptionNameVisitor.getDescription();
-    std::cout << "! " << descriptionNameString;
 
     std::string tmpFileName = argumentVector.at(3);
     argumentVector.clear();

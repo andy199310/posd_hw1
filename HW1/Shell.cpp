@@ -18,6 +18,7 @@
 #include "Command/PerimeterCommand.h"
 #include "Command/ShowCommand.h"
 #include "Command/SaveCommand.h"
+#include "Command/LoadCommand.h"
 
 Shell::Shell(Application *application):_application(application) {
     _commandMap.push_back(new AddCommand(_application));
@@ -26,7 +27,8 @@ Shell::Shell(Application *application):_application(application) {
     _commandMap.push_back(new DeleteCommand(_application));
     _commandMap.push_back(new PerimeterCommand(_application));
     _commandMap.push_back(new ShowCommand(_application));
-    _commandMap.push_back(new SaveCommand(_application, this));
+    _commandMap.push_back(new SaveCommand(_application));
+    _commandMap.push_back(new LoadCommand(_application));
 }
 
 void Shell::runCommand(std::string command) {
