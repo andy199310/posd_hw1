@@ -9,16 +9,20 @@
 #include <vector>
 #include <map>
 #include <string>
+#include <queue>
 #include "Media.h"
 
 class Application {
-public:
+private:
     std::map<std::string, Media*> _mediaMap;
+    std::queue<std::string> _outputStringQueue;
 
 
 public:
     bool addMedia(std::string name, Media* media);
     Media* getMediaByName(std::string name);
+    void writeOutput(std::string message);
+    std::string getNextOutputString();
 };
 
 

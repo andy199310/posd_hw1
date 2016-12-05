@@ -5,8 +5,8 @@
 #ifndef POSD_HW1_UTDEFCOMMAND_H
 #define POSD_HW1_UTDEFCOMMAND_H
 
-#include <HW1/Execption/NameNotFoundException.h>
-#include "HW1/Execption/ArgumentMismatchException.h"
+#include "../../Execption/NameNotFoundException.h"
+#include "../../Execption/ArgumentMismatchException.h"
 #include "../../Command/DefCommand.h"
 #include "../../Application.h"
 #include "../../../cppunitlite/TestHarness.h"

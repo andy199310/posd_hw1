@@ -19,3 +19,16 @@ Media *Application::getMediaByName(std::string name) {
         return _mediaMap.at(name);
     return nullptr;
 }
+
+void Application::writeOutput(std::string message) {
+    _outputStringQueue.push(message);
+}
+
+std::string Application::getNextOutputString() {
+    if(_outputStringQueue.size() > 0){
+        std::string returnString = _outputStringQueue.front();
+        _outputStringQueue.pop();
+        return returnString;
+    }
+    return nullptr;
+}
