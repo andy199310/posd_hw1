@@ -4,13 +4,15 @@
 
 #include <iostream>
 #include <string>
-#include <HW1/CompositeMedia.h>
+
 
 #include "DefCommand.h"
 #include "CommandFunction.h"
-#include "HW1/Execption/ArgumentMismatchException.h"
-#include "HW1/Execption/NameDuplicateException.h"
-#include "HW1/Execption/NameNotFoundException.h"
+#include "../Execption/ArgumentMismatchException.h"
+#include "../Execption/NameDuplicateException.h"
+#include "../Execption/NameNotFoundException.h"
+#include "../Execption/NameNotFoundException.h"
+#include "../CompositeMedia.h"
 #include "../ShapeMedia.h"
 #include "../Circle.h"
 #include "../Rectangle.h"
