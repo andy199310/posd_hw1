@@ -23,5 +23,6 @@
 #include "Command/utAreaCommand.h"
 #include "Command/utPerimeterCommand.h"
 #include "Command/utShowCommand.h"
+#include "Command/utAddCommand.h"
 
 #endif //POSD_HW1_UTMAIN_H

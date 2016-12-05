@@ -78,6 +78,21 @@ TEST(addComboNotFound, DefCommand){
     }
 }
 
+TEST(addEmptyComboMedia, DefCommand){
+    Application* application = new Application();
+    DefCommand defCommand(application);
+    try{
+        defCommand.execute("def combo = combo{}");
+        if(application->getMediaByName("combo") != nullptr){
+            CHECK(true);
+        }else{
+            FAIL("Should not be here");
+        }
+    }catch(NameNotFoundException){
+        FAIL("Should not be here");
+    }
+}
+
 
 TEST(addComboMedia, DefCommand){
     Application* application = new Application();
