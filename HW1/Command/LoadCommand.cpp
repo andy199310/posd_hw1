@@ -7,8 +7,8 @@
 #include "CommandFunction.h"
 #include <iostream>
 #include <fstream>
-#include <HW1/MediaDirector.h>
-#include <HW1/CompositeMedia.h>
+#include "../MediaDirector.h"
+#include "../CompositeMedia.h"
 #include "../MediaBuilder.h"
 
 LoadCommand::LoadCommand(Application *application):_application(application) {
