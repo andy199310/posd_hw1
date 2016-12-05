@@ -7,8 +7,11 @@
 #include "CommandFunction.h"
 #include <iostream>
 #include <fstream>
+#include <HW1/DescriptionNameVisitor.h>
+#include "../DescriptionVisitor.h"
+#include "../Execption/NameNotFoundException.h"
 
-SaveCommand::SaveCommand(Shell *shell):_shell(shell){
+SaveCommand::SaveCommand(Application *application, Shell *shell):_application(application),_shell(shell){
 
 }
 
@@ -19,6 +22,20 @@ void SaveCommand::execute(std::string command) {
     if(argumentVector.size() != 4){
         throw ArgumentMismatchException();
     }
+
+    Media *media = _application->getMediaByName(argumentVector.at(1));
+    if(media == nullptr){
+        throw NameNotFoundException(argumentVector.at(1));
+    }
+    DescriptionVisitor descriptionVisitor;
+    media->accept(&descriptionVisitor);
+    std::string descriptionString = descriptionVisitor.getDescription();
+
+    DescriptionNameVisitor descriptionNameVisitor(_application);
+    media->accept(&descriptionNameVisitor);
+    std::string descriptionNameString = descriptionNameVisitor.getDescription();
+    std::cout << "! " << descriptionNameString;
+
     std::string tmpFileName = argumentVector.at(3);
     argumentVector.clear();
     CommandFunction::split(tmpFileName, argumentVector, '"');
@@ -29,9 +46,8 @@ void SaveCommand::execute(std::string command) {
     std::ofstream file(tmpFileName);
     if (file.is_open())
     {
-        for(unsigned int i=0; i<_shell->_commandHistory.size(); i++){
-            file << _shell->_commandHistory.at(i) << "\n";
-        }
+        file << descriptionString << "\n";
+        file << descriptionNameString << "\n";
         file.close();
     }
 }

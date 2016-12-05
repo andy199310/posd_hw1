@@ -59,3 +59,13 @@ bool Application::deleteMedia(std::string name) {
         return false;
     }
 }
+
+std::string Application::getNameByMedia(Media *media) {
+    for(std::map<std::string, Media*>::iterator iter = _mediaMap.begin(); iter != _mediaMap.end(); ++iter )
+    {
+        if(iter->second == media){
+            return iter->first;
+        }
+    }
+    return nullptr;
+}

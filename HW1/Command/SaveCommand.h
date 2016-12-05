@@ -7,18 +7,20 @@
 
 
 #include "../Shell.h"
+#include "../Application.h"
 #include "Command.h"
 
 class SaveCommand : public Command{
 private:
     Shell *_shell;
+    Application *_application;
 public:
     virtual void execute(std::string command) override;
 
     virtual bool checkValid(std::string command) override;
 
 public:
-    SaveCommand(Shell *shell);
+    SaveCommand(Application *application, Shell *shell);
 };
 
 

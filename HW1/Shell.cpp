@@ -26,7 +26,7 @@ Shell::Shell(Application *application):_application(application) {
     _commandMap.push_back(new DeleteCommand(_application));
     _commandMap.push_back(new PerimeterCommand(_application));
     _commandMap.push_back(new ShowCommand(_application));
-    _commandMap.push_back(new SaveCommand(this));
+    _commandMap.push_back(new SaveCommand(_application, this));
 }
 
 void Shell::runCommand(std::string command) {
