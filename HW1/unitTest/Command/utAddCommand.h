@@ -57,7 +57,7 @@ TEST(basic, AddCommand){
         defCommand.execute("def rectangle = Rectangle(0,0,10,10)");
         defCommand.execute("def combo = combo{}");
         addCommand.execute("add rectangle to combo");
-        
+
         AreaVisitor areaVisitor;
         Media* media = application->getMediaByName("combo");
         media->accept(&areaVisitor);

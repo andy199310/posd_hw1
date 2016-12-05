@@ -98,7 +98,7 @@ TEST(addComboMedia, DefCommand){
     Application* application = new Application();
     DefCommand defCommand(application);
     try{
-        defCommand.execute("def circle = Circle(0,0,10,10,2,3)");
+        defCommand.execute("def circle = Circle(0,0,10)");
         defCommand.execute("def triangle = Triangle(0,0,10,10,2,3)");
         defCommand.execute("def combo = combo{circle,triangle}");
         if(application->getMediaByName("combo") != nullptr){

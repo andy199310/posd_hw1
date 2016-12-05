@@ -22,6 +22,7 @@ private:
 
 public:
     bool addMedia(std::string name, Media* media);
+    bool deleteMedia(std::string name);
     Media* getMediaByName(std::string name);
     void writeOutput(std::string message);
     std::string getNextOutputString();

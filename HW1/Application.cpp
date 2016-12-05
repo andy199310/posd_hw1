@@ -2,6 +2,7 @@
 // Created by Green on 2016/12/5.
 //
 
+#include <cstdio>
 #include "Application.h"
 
 bool Application::addMedia(std::string name, Media *media) {
@@ -40,4 +41,21 @@ std::map<std::string, Media *> Application::getMediaMap() {
 
 std::vector<std::string> Application::getMediaNameVector() {
     return _mediaNameVector;
+}
+
+bool Application::deleteMedia(std::string name) {
+    if(this->getMediaByName(name) != nullptr){
+        _mediaMap.erase(name);
+        for(std::vector<std::string>::iterator iter = _mediaNameVector.begin(); iter != _mediaNameVector.end(); ++iter )
+        {
+            if( *iter == name )
+            {
+                _mediaNameVector.erase( iter );
+                break;
+            }
+        }
+        return true;
+    }else{
+        return false;
+    }
 }

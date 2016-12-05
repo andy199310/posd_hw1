@@ -24,5 +24,6 @@
 #include "Command/utPerimeterCommand.h"
 #include "Command/utShowCommand.h"
 #include "Command/utAddCommand.h"
+#include "Command/utDeleteCommand.h"
 
 #endif //POSD_HW1_UTMAIN_H
