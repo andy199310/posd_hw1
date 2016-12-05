@@ -5,6 +5,7 @@
 #include <iostream>
 #include <sstream>
 #include "CommandFunction.h"
+#include <math.h>
 
 unsigned int CommandFunction::split(const std::string &txt, std::vector<std::string> &strs, char ch) {
     unsigned int pos = txt.find( ch );
