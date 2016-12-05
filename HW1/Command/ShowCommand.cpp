@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "ShowCommand.h"
+#include "CommandFunction.h"
 
 ShowCommand::ShowCommand(Application *application):_application(application) {
 
@@ -14,4 +15,8 @@ void ShowCommand::execute(std::string command) {
     for(unsigned int i=0; i<mediaNameVector.size(); i++){
         _application->writeOutput(mediaNameVector.at(i));
     }
+}
+
+bool ShowCommand::checkValid(std::string command) {
+    return CommandFunction::startWith(command, "show");
 }

@@ -43,3 +43,7 @@ void DeleteCommand::execute(std::string command) {
         parent->remove(child);
     }
 }
+
+bool DeleteCommand::checkValid(std::string command) {
+    return CommandFunction::startWith(command, "delete ");
+}

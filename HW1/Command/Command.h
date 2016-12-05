@@ -10,6 +10,8 @@
 class Command{
 public:
     virtual void execute(std::string command) = 0;
+
+    virtual bool checkValid(std::string command) = 0;
 };
 
 #endif //POSD_HW1_COMMAND_H

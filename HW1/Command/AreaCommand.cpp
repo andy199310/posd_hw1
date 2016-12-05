@@ -36,3 +36,7 @@ void AreaCommand::execute(std::string command) {
     stream << areaVisitor.getTotalArea();
     _application->writeOutput(stream.str());
 }
+
+bool AreaCommand::checkValid(std::string command) {
+    return CommandFunction::endWith(command, "area?");
+}

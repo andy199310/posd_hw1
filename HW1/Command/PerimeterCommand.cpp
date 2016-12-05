@@ -33,3 +33,7 @@ void PerimeterCommand::execute(std::string command) {
     stream << perimeterVisitor.getTotalPerimeter();
     _application->writeOutput(stream.str());
 }
+
+bool PerimeterCommand::checkValid(std::string command) {
+    return CommandFunction::endWith(command, "perimeter?");
+}

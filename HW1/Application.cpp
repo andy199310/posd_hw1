@@ -32,7 +32,7 @@ std::string Application::getNextOutputString() {
         _outputStringQueue.pop();
         return returnString;
     }
-    return nullptr;
+    return std::string();
 }
 
 std::map<std::string, Media *> Application::getMediaMap() {

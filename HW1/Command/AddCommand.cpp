@@ -29,3 +29,7 @@ void AddCommand::execute(std::string command) {
 
     target->add(child);
 }
+
+bool AddCommand::checkValid(std::string command) {
+    return CommandFunction::startWith(command, "add ");
+}

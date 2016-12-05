@@ -26,7 +26,12 @@ void CommandFunction::printVector(const std::vector<std::string> &vector) {
 }
 
 bool CommandFunction::startWith(std::string origin, std::string key) {
-    return origin.compare(0, key.length(), key) == 0;
+    try{
+        return origin.compare(0, key.length(), key) == 0;
+    }catch(...){
+        return false;
+    }
+
 }
 
 void CommandFunction::getShapeArgumentFromString(std::vector<double> *argumentVector, std::string string) {
@@ -50,12 +55,19 @@ void CommandFunction::getComboArgumentFromString(std::vector<std::string> *argum
     unsigned long endIndex = string.find_first_of("}");
     std::string subString = string.substr(startIndex+1, endIndex-startIndex-1);
 
-    double tmpDouble;
     std::stringstream stream(subString);
     std::string tmpString;
 
     while(std::getline(stream, tmpString, ',')){
         argumentVector->push_back(tmpString);
+    }
+}
+
+bool CommandFunction::endWith(std::string origin, std::string key) {
+    try{
+        return origin.compare(origin.length()-key.length(), key.length(), key) == 0;
+    }catch(...){
+        return false;
     }
 }
 

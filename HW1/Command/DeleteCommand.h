@@ -16,6 +16,8 @@ public:
 
 public:
     virtual void execute(std::string command) override;
+
+    virtual bool checkValid(std::string command) override;
 };
 
 

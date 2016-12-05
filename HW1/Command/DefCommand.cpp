@@ -78,3 +78,7 @@ void DefCommand::execute(std::string command) {
         }
     }
 }
+
+bool DefCommand::checkValid(std::string command) {
+    return CommandFunction::startWith(command, "def ");
+}
