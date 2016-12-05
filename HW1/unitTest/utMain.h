@@ -18,4 +18,7 @@
 #include "utMyDocument.h"
 #include "utMediaDirector.h"
 
+#include "utApplication.h"
+#include "Command/utDefCommand.h"
+
 #endif //POSD_HW1_UTMAIN_H

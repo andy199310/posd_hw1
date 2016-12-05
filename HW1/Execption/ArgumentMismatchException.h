@@ -1,0 +1,14 @@
+//
+// Created by Green on 2016/12/5.
+//
+
+#ifndef POSD_HW1_ARGUMENTMISMATCHEXECPTION_H
+#define POSD_HW1_ARGUMENTMISMATCHEXECPTION_H
+
+
+class ArgumentMismatchException {
+
+};
+
+
+#endif //POSD_HW1_ARGUMENTMISMATCHEXECPTION_H
