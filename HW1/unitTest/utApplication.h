@@ -20,6 +20,18 @@ TEST(getMediaByNameNotFound, Application){
     }
 }
 
+TEST(getMediaNameVector, Application){
+    Application *application = new Application();
+    application->addMedia("key1", new CompositeMedia());
+    application->addMedia("key2", new CompositeMedia());
+    application->addMedia("key3", new CompositeMedia());
+
+    std::vector<std::string> vector = application->getMediaNameVector();
+    CHECK(vector.at(0) == "key1");
+    CHECK(vector.at(1) == "key2");
+    CHECK(vector.at(2) == "key3");
+}
+
 TEST(addMedia, Application){
     Application *application = new Application();
     if(application->addMedia("key", new CompositeMedia())){

@@ -10,11 +10,13 @@
 #include <map>
 #include <string>
 #include <queue>
+#include <set>
 #include "Media.h"
 
 class Application {
 private:
     std::map<std::string, Media*> _mediaMap;
+    std::vector<std::string> _mediaNameVector;
     std::queue<std::string> _outputStringQueue;
 
 
@@ -23,6 +25,10 @@ public:
     Media* getMediaByName(std::string name);
     void writeOutput(std::string message);
     std::string getNextOutputString();
+
+public:
+    std::map<std::string, Media*> getMediaMap();
+    std::vector<std::string> getMediaNameVector();
 };
 
 

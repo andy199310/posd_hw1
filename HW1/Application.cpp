@@ -7,7 +7,8 @@
 bool Application::addMedia(std::string name, Media *media) {
     std::string *heapName = new std::string(name);
     if(this->getMediaByName(*heapName) == nullptr){
-        _mediaMap.insert(std::pair<std::string,Media*>(name, media));
+        _mediaMap.insert(std::pair<std::string,Media*>(*heapName, media));
+        _mediaNameVector.push_back(*heapName);
         return true;
     }else{
         return false;
@@ -31,4 +32,12 @@ std::string Application::getNextOutputString() {
         return returnString;
     }
     return nullptr;
+}
+
+std::map<std::string, Media *> Application::getMediaMap() {
+    return _mediaMap;
+}
+
+std::vector<std::string> Application::getMediaNameVector() {
+    return _mediaNameVector;
 }
