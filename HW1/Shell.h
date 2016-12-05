@@ -14,6 +14,8 @@ private:
     Application *_application;
     std::vector<Command*> _commandMap;
 public:
+    std::vector<std::string> _commandHistory;
+public:
     void runCommand(std::string command);
     void start();
 private:
