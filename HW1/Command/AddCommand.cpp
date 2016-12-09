@@ -2,12 +2,13 @@
 // Created by Green on 2016/12/5.
 //
 
-#include <HW1/DescriptionVisitor.h>
-#include <HW1/DescriptionNameVisitor.h>
+#include "../DescriptionVisitor.h"
+#include "../DescriptionNameVisitor.h"
 #include "../Execption/NameNotFoundException.h"
 #include "../Execption/ArgumentMismatchException.h"
 #include "AddCommand.h"
 #include "CommandFunction.h"
+#include "../Application.h"
 
 AddCommand::AddCommand(Application *application):_application(application) {
 

@@ -9,6 +9,7 @@
 #include "Triangle.h"
 #include "ShapeMedia.h"
 #include "CompositeMedia.h"
+#include "Application.h"
 
 void DescriptionNameVisitor::visit(CompositeMedia *media) {
     std::stringstream stringStream;

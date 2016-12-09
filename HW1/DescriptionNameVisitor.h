@@ -9,7 +9,7 @@
 #include <string>
 #include <stack>
 #include "MediaVisitor.h"
-#include "Application.h"
+class Application;
 
 class DescriptionNameVisitor : public MediaVisitor{
 private:

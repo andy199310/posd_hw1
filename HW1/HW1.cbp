@@ -5,7 +5,7 @@
 		<Option title="HW1" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="unitTest\;" />
+		<Option virtualFolders="unitTest\;unitTest\command\;" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/HW1" prefix_auto="1" extension_auto="1" />
@@ -36,6 +36,8 @@
 		<Linker>
 			<Add library="../cppunitlite/libCppUnitLite.a" />
 		</Linker>
+		<Unit filename="Application.cpp" />
+		<Unit filename="Application.h" />
 		<Unit filename="AreaVisitor.cpp" />
 		<Unit filename="AreaVisitor.h" />
 		<Unit filename="Circle.cpp" />
@@ -63,6 +65,8 @@
 		<Unit filename="CompositeMedia.h" />
 		<Unit filename="CountingVisitor.cpp" />
 		<Unit filename="CountingVisitor.h" />
+		<Unit filename="DescriptionNameVisitor.cpp" />
+		<Unit filename="DescriptionNameVisitor.h" />
 		<Unit filename="DescriptionVisitor.cpp" />
 		<Unit filename="DescriptionVisitor.h" />
 		<Unit filename="Document.h" />
@@ -88,6 +92,8 @@
 		<Unit filename="Shape.h" />
 		<Unit filename="ShapeMedia.cpp" />
 		<Unit filename="ShapeMedia.h" />
+		<Unit filename="Shell.cpp" />
+		<Unit filename="Shell.h" />
 		<Unit filename="Text.cpp" />
 		<Unit filename="Text.h" />
 		<Unit filename="TextMedia.cpp" />
@@ -97,6 +103,33 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="shapeFunction.cpp" />
 		<Unit filename="shapeFunction.h" />
+		<Unit filename="unitTest/Command/utAddCommand.h">
+			<Option virtualFolder="unitTest/command/" />
+		</Unit>
+		<Unit filename="unitTest/Command/utAreaCommand.h">
+			<Option virtualFolder="unitTest/command/" />
+		</Unit>
+		<Unit filename="unitTest/Command/utDefCommand.h">
+			<Option virtualFolder="unitTest/command/" />
+		</Unit>
+		<Unit filename="unitTest/Command/utDeleteCommand.h">
+			<Option virtualFolder="unitTest/command/" />
+		</Unit>
+		<Unit filename="unitTest/Command/utLoadCommand.h">
+			<Option virtualFolder="unitTest/command/" />
+		</Unit>
+		<Unit filename="unitTest/Command/utPerimeterCommand.h">
+			<Option virtualFolder="unitTest/command/" />
+		</Unit>
+		<Unit filename="unitTest/Command/utSaveCommand.h">
+			<Option virtualFolder="unitTest/command/" />
+		</Unit>
+		<Unit filename="unitTest/Command/utShowCommand.h">
+			<Option virtualFolder="unitTest/command/" />
+		</Unit>
+		<Unit filename="unitTest/utApplication.h">
+			<Option virtualFolder="unitTest/" />
+		</Unit>
 		<Unit filename="unitTest/utAreaVisitor.h">
 			<Option virtualFolder="unitTest/" />
 		</Unit>
