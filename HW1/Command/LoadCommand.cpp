@@ -16,6 +16,7 @@ LoadCommand::LoadCommand(Application *application):_application(application) {
 }
 
 void LoadCommand::execute(std::string command) {
+
     std::vector<std::string> argumentVector;
     CommandFunction::split(command, argumentVector, ' ');
 
@@ -64,6 +65,7 @@ void LoadCommand::addToApplication(Media *media, std::string *descriptionNameStr
         for(unsigned int i=0; i<compositeMedia->size(); i++){
             this->addToApplication(compositeMedia->at(i), descriptionNameString);
         }
+        *descriptionNameString = descriptionNameString->substr(1);
     }else{
         unsigned long startIndex = descriptionNameString->find_first_of(" ");
         std::string subString = descriptionNameString->substr(0, startIndex);
