@@ -20,8 +20,11 @@ TEST(deleteFromCombo, AreaCommand){
     DeleteCommand deleteCommand(application);
     try{
         defCommand.execute("def rectangle1 = Rectangle(0,0,10,10)");
+        application->getNextOutputString();
         defCommand.execute("def rectangle2 = Rectangle(0,0,10,5)");
+        application->getNextOutputString();
         defCommand.execute("def combo = combo{rectangle1,rectangle2}");
+        application->getNextOutputString();
         deleteCommand.execute("delete rectangle1 from combo");
         AreaVisitor areaVisitor;
         Media* media = application->getMediaByName("combo");
@@ -45,8 +48,11 @@ TEST(deleteAll, AreaCommand){
     ShowCommand showCommand(application);
     try{
         defCommand.execute("def rectangle1 = Rectangle(0,0,10,10)");
+        application->getNextOutputString();
         defCommand.execute("def rectangle2 = Rectangle(0,0,10,5)");
+        application->getNextOutputString();
         defCommand.execute("def combo = combo{rectangle1,rectangle2}");
+        application->getNextOutputString();
         deleteCommand.execute("delete rectangle1");
         AreaVisitor areaVisitor;
         Media* media = application->getMediaByName("combo");

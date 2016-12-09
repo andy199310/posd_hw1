@@ -27,6 +27,7 @@ void SaveCommand::execute(std::string command) {
     if(media == nullptr){
         throw NameNotFoundException(argumentVector.at(1));
     }
+    std::string mediaName = argumentVector.at(1);
     DescriptionVisitor descriptionVisitor;
     media->accept(&descriptionVisitor);
     std::string descriptionString = descriptionVisitor.getDescription();
@@ -49,6 +50,7 @@ void SaveCommand::execute(std::string command) {
         file << descriptionNameString << "\n";
         file.close();
     }
+    _application->writeOutput(mediaName + " saved to " + tmpFileName);
 }
 
 bool SaveCommand::checkValid(std::string command) {

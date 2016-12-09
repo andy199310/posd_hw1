@@ -17,8 +17,11 @@ TEST(basic, ShowCommand){
     ShowCommand showCommand(application);
     try{
         defCommand.execute("def circle = Circle(0,0,10,10,2,3)");
+        application->getNextOutputString();
         defCommand.execute("def triangle = Triangle(0,0,10,10,2,3)");
+        application->getNextOutputString();
         defCommand.execute("def combo = combo{circle,triangle}");
+        application->getNextOutputString();
         showCommand.execute("");
         CHECK(application->getNextOutputString() == "circle")
         CHECK(application->getNextOutputString() == "triangle")

@@ -18,6 +18,7 @@ TEST(basic, SaveCommand){
     AreaCommand areaCommand(application);
     try{
         loadCommand.execute("load \"myShapes.txt\"");
+        application->getNextOutputString();
         areaCommand.execute("comboExclamation.area?");
 
         CHECK(application->getNextOutputString() == "19")

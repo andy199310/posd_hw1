@@ -49,7 +49,7 @@ void DefCommand::execute(std::string command) {
 
         std::string key = argumentList.at(1).substr(0, argumentList.at(1).length());
         _application->addMedia(key, compositeMedia);
-
+        _application->writeOutput(argumentList.at(3));
         return;
     }else{
         if(CommandFunction::startWith(argumentList.at(3), "Circle")){
@@ -57,7 +57,7 @@ void DefCommand::execute(std::string command) {
             CommandFunction::getShapeArgumentFromString(&itemVector, argumentList.at(3));
             std::string key = argumentList.at(1).substr(0, argumentList.at(1).length());
             _application->addMedia(key, new ShapeMedia(new Circle(itemVector.at(0), itemVector.at(1), itemVector.at(2))));
-
+            _application->writeOutput(argumentList.at(3));
             return;
         }
         if(CommandFunction::startWith(argumentList.at(3), "Rectangle")){
@@ -65,7 +65,7 @@ void DefCommand::execute(std::string command) {
             CommandFunction::getShapeArgumentFromString(&itemVector, argumentList.at(3));
             std::string key = argumentList.at(1).substr(0, argumentList.at(1).length());
             _application->addMedia(key, new ShapeMedia(new Rectangle(itemVector.at(0), itemVector.at(1), itemVector.at(2), itemVector.at(3))));
-
+            _application->writeOutput(argumentList.at(3));
             return;
         }
         if(CommandFunction::startWith(argumentList.at(3), "Triangle")){
@@ -73,7 +73,7 @@ void DefCommand::execute(std::string command) {
             CommandFunction::getShapeArgumentFromString(&itemVector, argumentList.at(3));
             std::string key = argumentList.at(1).substr(0, argumentList.at(1).length());
             _application->addMedia(key, new ShapeMedia(new Triangle(itemVector.at(0), itemVector.at(1), itemVector.at(2), itemVector.at(3), itemVector.at(4), itemVector.at(5))));
-
+            _application->writeOutput(argumentList.at(3));
             return;
         }
     }

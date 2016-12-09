@@ -41,6 +41,7 @@ TEST(basic, PerimeterCommand){
     DefCommand defCommand(application);
     try{
         defCommand.execute("def rectangle = Rectangle(0,0,10,10)");
+        application->getNextOutputString();
         perimeterCommand.execute("rectangle.perimeter?");
         CHECK(application->getNextOutputString() == "40");
     }catch(ArgumentMismatchException){
@@ -56,8 +57,11 @@ TEST(combo, PerimeterCommand){
     DefCommand defCommand(application);
     try{
         defCommand.execute("def rectangle1 = Rectangle(0,0,10,10)");
+        application->getNextOutputString();
         defCommand.execute("def rectangle2 = Rectangle(0,0,10,5)");
+        application->getNextOutputString();
         defCommand.execute("def combo = combo{rectangle1,rectangle2}");
+        application->getNextOutputString();
         perimeterCommand.execute("combo.perimeter?");
         CHECK(application->getNextOutputString() == "70");
     }catch(ArgumentMismatchException){

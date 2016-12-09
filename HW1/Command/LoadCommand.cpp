@@ -47,6 +47,7 @@ void LoadCommand::execute(std::string command) {
 
     Media* media = mediaBuilder.getBaseShape();
     this->addToApplication(media, &descriptionNameString);
+    _application->writeOutput("loading " + tmpFileName + "...");
 }
 
 bool LoadCommand::checkValid(std::string command) {
