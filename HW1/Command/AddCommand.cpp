@@ -2,6 +2,8 @@
 // Created by Green on 2016/12/5.
 //
 
+#include <HW1/DescriptionVisitor.h>
+#include <HW1/DescriptionNameVisitor.h>
 #include "../Execption/NameNotFoundException.h"
 #include "../Execption/ArgumentMismatchException.h"
 #include "AddCommand.h"
@@ -28,6 +30,14 @@ void AddCommand::execute(std::string command) {
     }
 
     target->add(child);
+
+    DescriptionVisitor descriptionVisitor;
+    DescriptionNameVisitor descriptionNameVisitor(_application);
+
+    target->accept(&descriptionVisitor);
+    target->accept(&descriptionNameVisitor);
+
+    _application->writeOutput(argumentList.at(1) + " = " + descriptionNameVisitor.getDescription() + " = " + descriptionVisitor.getDescription());
 }
 
 bool AddCommand::checkValid(std::string command) {
