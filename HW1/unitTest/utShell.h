@@ -7,7 +7,6 @@
 
 #define EPSILON 0.001
 
-#include <iostream>
 #include "../CompositeMedia.h"
 #include "../Application.h"
 #include "../Shell.h"
@@ -60,7 +59,6 @@ TEST(Redo1, Shell){
     shell.undo();
     while(application.getNextOutputString().length() > 0){}
     shell.redo();
-//    std::cout << application.getNextOutputString();
     CHECK(application.getNextOutputString() == "Circle(0,0,10)");
     CHECK(application.getNextOutputString() == "Redo command!");
     CHECK(application.getMediaByName("c") != nullptr);
