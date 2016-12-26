@@ -72,7 +72,19 @@ void Shell::printOutput() {
 void Shell::start() {
     std::string command;
     std::cout << ":- ";
-    while(std::getline(std::cin, command)){
+    while(true){
+        std::getline(std::cin, command);
+        if(std::cin.eof()){
+            this->undo();
+            std::cin.clear();
+            this->printOutput();
+            continue;
+        }
+        if(int(command.at(0)) == 25){
+            this->redo();
+            this->printOutput();
+            continue;
+        }
 
         this->runCommand(command);
         this->printOutput();
