@@ -26,3 +26,7 @@ Text *TextMedia::getText() {
 bool TextMedia::remove(Media *removeMedia) {
     return false;
 }
+
+bool TextMedia::haveChild(Media *media) {
+    return false;
+}

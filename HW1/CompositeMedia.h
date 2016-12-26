@@ -24,6 +24,8 @@ public:
 
     virtual void accept(MediaVisitor* visitor) override;
 
+    virtual bool haveChild(Media *media) override;
+
 private:
     std::vector<Media *> mediaVector;
 

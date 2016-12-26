@@ -35,7 +35,13 @@ void Shell::runCommand(std::string command) {
     for(unsigned int i=0; i<_commandMap.size(); i++){
         if(_commandMap.at(i)->checkValid(command)){
             try{
-                _commandMap.at(i)->execute(command);
+                if(_commandMap.at(i)->needUndo()){
+                    Command* newCommand = _commandMap.at(i)->clone();
+                    newCommand->execute(command);
+                    _commandHistory.push(newCommand);
+                }else{
+                    _commandMap.at(i)->execute(command);
+                }
             }catch (ArgumentMismatchException){
                 std::cout << "Argument mismatch. Please check your command." << std::endl;
                 return;
@@ -48,7 +54,7 @@ void Shell::runCommand(std::string command) {
             }catch(...){
                 std::cout << "There is some unexpected error. Please check your command." << std::endl;
             }
-            _commandHistory.push_back(command);
+
             printOutput();
             return;
         }
@@ -73,3 +79,30 @@ void Shell::start() {
         std::cout << ":- ";
     }
 }
+
+void Shell::undo() {
+    if(_commandHistory.size() > 0){
+        Command * command = _commandHistory.top();
+        command->undo();
+        _undoCommandHistory.push(command);
+        _commandHistory.pop();
+        _application->writeOutput("Undo command!");
+    }else{
+        _application->writeOutput("No command to undo!");
+    }
+    printOutput();
+}
+
+void Shell::redo() {
+    if(_undoCommandHistory.size() > 0){
+        Command * command = _undoCommandHistory.top();
+        command->undo();
+        _commandHistory.push(command);
+        _undoCommandHistory.pop();
+        _application->writeOutput("Redo command!");
+    }else{
+        _application->writeOutput("No command to Redo!");
+    }
+}
+
+

@@ -18,6 +18,14 @@ public:
     virtual void execute(std::string command) override;
 
     virtual bool checkValid(std::string command) override;
+
+    virtual bool needUndo() override;
+
+    virtual void undo() override;
+
+    virtual void redo() override;
+
+    virtual Command *clone() override;
 };
 
 

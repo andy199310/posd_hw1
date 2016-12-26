@@ -20,3 +20,19 @@ void ShowCommand::execute(std::string command) {
 bool ShowCommand::checkValid(std::string command) {
     return CommandFunction::startWith(command, "show");
 }
+
+void ShowCommand::undo() {
+
+}
+
+Command *ShowCommand::clone() {
+    return nullptr;
+}
+
+bool ShowCommand::needUndo() {
+    return false;
+}
+
+void ShowCommand::redo() {
+
+}

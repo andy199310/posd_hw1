@@ -74,3 +74,19 @@ void LoadCommand::addToApplication(Media *media, std::string *descriptionNameStr
     }
 
 }
+
+bool LoadCommand::needUndo() {
+    return false;
+}
+
+void LoadCommand::undo() {
+
+}
+
+void LoadCommand::redo() {
+
+}
+
+Command *LoadCommand::clone() {
+    return nullptr;
+}

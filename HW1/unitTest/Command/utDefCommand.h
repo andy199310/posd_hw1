@@ -111,4 +111,37 @@ TEST(addComboMedia, DefCommand){
     }
 }
 
+TEST(undo, DefCommand){
+    Application* application = new Application();
+    DefCommand defCommand(application);
+    try{
+        defCommand.execute("def circle = Circle(0,0,10)");
+        defCommand.undo();
+        if(application->getMediaByName("circle") == nullptr){
+            CHECK(true);
+        }else{
+            FAIL("Should not be here");
+        }
+    }catch(NameNotFoundException){
+        FAIL("Should not be here");
+    }
+}
+
+TEST(redo, DefCommand){
+    Application* application = new Application();
+    DefCommand defCommand(application);
+    try{
+        defCommand.execute("def circle = Circle(0,0,10)");
+        defCommand.undo();
+        defCommand.redo();
+        if(application->getMediaByName("circle") != nullptr){
+            CHECK(true);
+        }else{
+            FAIL("Should not be here");
+        }
+    }catch(NameNotFoundException){
+        FAIL("Should not be here");
+    }
+}
+
 #endif //POSD_HW1_UTDEFCOMMAND_H

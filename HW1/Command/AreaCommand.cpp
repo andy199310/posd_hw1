@@ -40,3 +40,19 @@ void AreaCommand::execute(std::string command) {
 bool AreaCommand::checkValid(std::string command) {
     return CommandFunction::endWith(command, "area?");
 }
+
+bool AreaCommand::needUndo() {
+    return false;
+}
+
+void AreaCommand::undo() {
+
+}
+
+void AreaCommand::redo() {
+
+}
+
+Command *AreaCommand::clone() {
+    return nullptr;
+}

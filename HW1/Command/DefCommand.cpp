@@ -23,6 +23,7 @@ DefCommand::DefCommand(Application *application):_application(application){
 }
 
 void DefCommand::execute(std::string command) {
+    _command = command;
     std::vector<std::string> argumentList;
     CommandFunction::split(command, argumentList, ' ');
     if(argumentList.size() != 4){
@@ -48,6 +49,7 @@ void DefCommand::execute(std::string command) {
         }
 
         std::string key = argumentList.at(1).substr(0, argumentList.at(1).length());
+        _key = key;
         _application->addMedia(key, compositeMedia);
         _application->writeOutput(argumentList.at(3));
         return;
@@ -56,6 +58,7 @@ void DefCommand::execute(std::string command) {
             std::vector<double> itemVector;
             CommandFunction::getShapeArgumentFromString(&itemVector, argumentList.at(3));
             std::string key = argumentList.at(1).substr(0, argumentList.at(1).length());
+            _key = key;
             _application->addMedia(key, new ShapeMedia(new Circle(itemVector.at(0), itemVector.at(1), itemVector.at(2))));
             _application->writeOutput(argumentList.at(3));
             return;
@@ -64,6 +67,7 @@ void DefCommand::execute(std::string command) {
             std::vector<double> itemVector;
             CommandFunction::getShapeArgumentFromString(&itemVector, argumentList.at(3));
             std::string key = argumentList.at(1).substr(0, argumentList.at(1).length());
+            _key = key;
             _application->addMedia(key, new ShapeMedia(new Rectangle(itemVector.at(0), itemVector.at(1), itemVector.at(2), itemVector.at(3))));
             _application->writeOutput(argumentList.at(3));
             return;
@@ -72,6 +76,7 @@ void DefCommand::execute(std::string command) {
             std::vector<double> itemVector;
             CommandFunction::getShapeArgumentFromString(&itemVector, argumentList.at(3));
             std::string key = argumentList.at(1).substr(0, argumentList.at(1).length());
+            _key = key;
             _application->addMedia(key, new ShapeMedia(new Triangle(itemVector.at(0), itemVector.at(1), itemVector.at(2), itemVector.at(3), itemVector.at(4), itemVector.at(5))));
             _application->writeOutput(argumentList.at(3));
             return;
@@ -81,4 +86,20 @@ void DefCommand::execute(std::string command) {
 
 bool DefCommand::checkValid(std::string command) {
     return CommandFunction::startWith(command, "def ");
+}
+
+void DefCommand::undo() {
+    _application->deleteMedia(_key);
+}
+
+Command *DefCommand::clone() {
+    return new DefCommand(_application);
+}
+
+bool DefCommand::needUndo() {
+    return true;
+}
+
+void DefCommand::redo() {
+    this->execute(_command);
 }

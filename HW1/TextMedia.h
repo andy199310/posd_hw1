@@ -23,6 +23,8 @@ public:
 
     virtual Text* getText();
 
+    virtual bool haveChild(Media *media) override;
+
 private:
     Text *_text;
 };

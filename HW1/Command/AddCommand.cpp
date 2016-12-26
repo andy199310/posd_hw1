@@ -15,6 +15,7 @@ AddCommand::AddCommand(Application *application):_application(application) {
 }
 
 void AddCommand::execute(std::string command) {
+    _command = command;
     std::vector<std::string> argumentList;
     CommandFunction::split(command, argumentList, ' ');
     if(argumentList.size() != 4){
@@ -30,6 +31,8 @@ void AddCommand::execute(std::string command) {
         throw NameNotFoundException(argumentList.at(3));
     }
 
+    _parentKey = argumentList.at(3);
+    _key =  argumentList.at(1);
     target->add(child);
 
     DescriptionVisitor descriptionVisitor;
@@ -43,4 +46,22 @@ void AddCommand::execute(std::string command) {
 
 bool AddCommand::checkValid(std::string command) {
     return CommandFunction::startWith(command, "add ");
+}
+
+Command *AddCommand::clone() {
+    return new AddCommand(_application);
+}
+
+void AddCommand::undo() {
+    Media *parent = _application->getMediaByName(_parentKey);
+    Media *child = _application->getMediaByName(_key);
+    parent->remove(child);
+}
+
+bool AddCommand::needUndo() {
+    return true;
+}
+
+void AddCommand::redo() {
+    this->execute(_command);
 }

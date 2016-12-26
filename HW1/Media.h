@@ -14,6 +14,8 @@ public:
 
     virtual bool remove(Media *removeMedia) = 0;
 
+    virtual bool haveChild(Media *media) = 0;
+
     virtual void accept(MediaVisitor*) = 0;
 };
 

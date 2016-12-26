@@ -37,3 +37,19 @@ void PerimeterCommand::execute(std::string command) {
 bool PerimeterCommand::checkValid(std::string command) {
     return CommandFunction::endWith(command, "perimeter?");
 }
+
+bool PerimeterCommand::needUndo() {
+    return false;
+}
+
+void PerimeterCommand::undo() {
+
+}
+
+void PerimeterCommand::redo() {
+
+}
+
+Command *PerimeterCommand::clone() {
+    return nullptr;
+}

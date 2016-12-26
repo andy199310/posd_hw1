@@ -56,3 +56,19 @@ void SaveCommand::execute(std::string command) {
 bool SaveCommand::checkValid(std::string command) {
     return CommandFunction::startWith(command, "save ");
 }
+
+bool SaveCommand::needUndo() {
+    return false;
+}
+
+void SaveCommand::undo() {
+
+}
+
+void SaveCommand::redo() {
+
+}
+
+Command *SaveCommand::clone() {
+    return nullptr;
+}

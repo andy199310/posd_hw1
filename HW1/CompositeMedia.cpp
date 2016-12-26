@@ -48,3 +48,12 @@ bool CompositeMedia::remove(Media *removeMedia) {
     return false;
 }
 
+bool CompositeMedia::haveChild(Media *media) {
+    for(Media *mediaItem : mediaVector){
+        if(mediaItem == media){
+            return true;
+        }
+    }
+    return false;
+}
+

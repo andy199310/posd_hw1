@@ -6,6 +6,7 @@
 #define POSD_HW1_SHELL_H
 
 
+#include <stack>
 #include "Command/Command.h"
 #include "Application.h"
 
@@ -14,9 +15,12 @@ private:
     Application *_application;
     std::vector<Command*> _commandMap;
 public:
-    std::vector<std::string> _commandHistory;
+    std::stack<Command*> _commandHistory;
+    std::stack<Command*> _undoCommandHistory;
 public:
     void runCommand(std::string command);
+    void undo();
+    void redo();
     void start();
 private:
     void printOutput();

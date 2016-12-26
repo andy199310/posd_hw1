@@ -12,6 +12,7 @@
 #include "../../Command/AreaCommand.h"
 #include "../../Command/AddCommand.h"
 #include "../../Application.h"
+#include "../../AreaVisitor.h"
 #include "../../../cppunitlite/TestHarness.h"
 
 TEST(lengthMismatch, AddCommand){
@@ -63,6 +64,55 @@ TEST(basic, AddCommand){
         media->accept(&areaVisitor);
 
         CHECK(areaVisitor.getTotalArea() == 100)
+    }catch(NameNotFoundException){
+        FAIL("Should not be here");
+    }
+}
+
+TEST(undo, AddCommand){
+    Application* application = new Application();
+    AddCommand addCommand1(application);
+    AddCommand addCommand2(application);
+    DefCommand defCommand(application);
+    try{
+        defCommand.execute("def rectangle = Rectangle(0,0,10,10)");
+        defCommand.execute("def rectangle2 = Rectangle(0,0,10,10)");
+        defCommand.execute("def combo = combo{}");
+        addCommand1.execute("add rectangle to combo");
+        addCommand2.execute("add rectangle2 to combo");
+        addCommand2.undo();
+
+
+        AreaVisitor areaVisitor;
+        Media* media = application->getMediaByName("combo");
+        media->accept(&areaVisitor);
+
+        CHECK(areaVisitor.getTotalArea() == 100)
+    }catch(NameNotFoundException){
+        FAIL("Should not be here");
+    }
+}
+
+TEST(redo, AddCommand){
+    Application* application = new Application();
+    AddCommand addCommand1(application);
+    AddCommand addCommand2(application);
+    DefCommand defCommand(application);
+    try{
+        defCommand.execute("def rectangle = Rectangle(0,0,10,10)");
+        defCommand.execute("def rectangle2 = Rectangle(0,0,10,10)");
+        defCommand.execute("def combo = combo{}");
+        addCommand1.execute("add rectangle to combo");
+        addCommand2.execute("add rectangle2 to combo");
+        addCommand2.undo();
+        addCommand2.redo();
+
+
+        AreaVisitor areaVisitor;
+        Media* media = application->getMediaByName("combo");
+        media->accept(&areaVisitor);
+
+        CHECK(areaVisitor.getTotalArea() == 200)
     }catch(NameNotFoundException){
         FAIL("Should not be here");
     }

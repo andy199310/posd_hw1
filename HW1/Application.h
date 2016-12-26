@@ -15,6 +15,7 @@
 
 class Application {
 private:
+    friend class DeleteCommand;
     std::map<std::string, Media*> _mediaMap;
     std::vector<std::string> _mediaNameVector;
     std::queue<std::string> _outputStringQueue;

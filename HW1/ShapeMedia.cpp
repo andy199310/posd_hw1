@@ -26,3 +26,7 @@ bool ShapeMedia::remove(Media *removeMedia) {
     return false;
 }
 
+bool ShapeMedia::haveChild(Media *media) {
+    return false;
+}
+
