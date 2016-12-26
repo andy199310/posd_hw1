@@ -19,6 +19,7 @@
 #include "utMediaDirector.h"
 
 #include "utApplication.h"
+#include "utShell.h"
 #include "Command/utDefCommand.h"
 #include "Command/utAreaCommand.h"
 #include "Command/utPerimeterCommand.h"
@@ -27,5 +28,6 @@
 #include "Command/utDeleteCommand.h"
 #include "Command/utSaveCommand.h"
 #include "Command/utLoadCommand.h"
+
 
 #endif //POSD_HW1_UTMAIN_H

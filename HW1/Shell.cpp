@@ -55,7 +55,6 @@ void Shell::runCommand(std::string command) {
                 std::cout << "There is some unexpected error. Please check your command." << std::endl;
             }
 
-            printOutput();
             return;
         }
     }
@@ -76,6 +75,7 @@ void Shell::start() {
     while(std::getline(std::cin, command)){
 
         this->runCommand(command);
+        this->printOutput();
         std::cout << ":- ";
     }
 }
@@ -90,18 +90,17 @@ void Shell::undo() {
     }else{
         _application->writeOutput("No command to undo!");
     }
-    printOutput();
 }
 
 void Shell::redo() {
     if(_undoCommandHistory.size() > 0){
         Command * command = _undoCommandHistory.top();
-        command->undo();
+        command->redo();
         _commandHistory.push(command);
         _undoCommandHistory.pop();
         _application->writeOutput("Redo command!");
     }else{
-        _application->writeOutput("No command to Redo!");
+        _application->writeOutput("No command to redo!");
     }
 }
 
