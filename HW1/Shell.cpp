@@ -42,6 +42,9 @@ void Shell::runCommand(std::string command) {
                 }else{
                     _commandMap.at(i)->execute(command);
                 }
+                while(!_undoCommandHistory.empty()){
+                    _undoCommandHistory.pop();
+                }
             }catch (ArgumentMismatchException){
                 std::cout << "Argument mismatch. Please check your command." << std::endl;
                 return;

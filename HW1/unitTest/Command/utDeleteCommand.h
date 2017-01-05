@@ -75,6 +75,73 @@ TEST(deleteAll, AreaCommand){
     }
 }
 
+TEST(deleteCombo, AreaCommand){
+    Application* application = new Application();
+    DefCommand defCommand(application);
+    DeleteCommand deleteCommand(application);
+    try{
+        defCommand.execute("def rectangle1 = Rectangle(0,0,10,10)");
+        application->getNextOutputString();
+        defCommand.execute("def rectangle2 = Rectangle(0,0,10,5)");
+        application->getNextOutputString();
+        defCommand.execute("def combo = combo{rectangle1,rectangle2}");
+        application->getNextOutputString();
+        deleteCommand.execute("delete combo");
+
+        Media* media = application->getMediaByName("combo");
+
+        CHECK(media == nullptr);
+
+    }catch(NameNotFoundException){
+        FAIL("Should not be here");
+    }
+}
+
+TEST(deleteComboUndo, AreaCommand){
+    Application* application = new Application();
+    DefCommand defCommand(application);
+    DeleteCommand deleteCommand(application);
+    try{
+        defCommand.execute("def rectangle1 = Rectangle(0,0,10,10)");
+        application->getNextOutputString();
+        defCommand.execute("def rectangle2 = Rectangle(0,0,10,5)");
+        application->getNextOutputString();
+        defCommand.execute("def combo = combo{rectangle1,rectangle2}");
+        application->getNextOutputString();
+        deleteCommand.execute("delete combo");
+        deleteCommand.undo();
+
+        Media* media = application->getMediaByName("combo");
+
+        CHECK(media != nullptr);
+    }catch(NameNotFoundException){
+        FAIL("Should not be here");
+    }
+}
+TEST(deleteComboRedo, AreaCommand){
+    Application* application = new Application();
+    DefCommand defCommand(application);
+    DeleteCommand deleteCommand(application);
+    try{
+        defCommand.execute("def rectangle1 = Rectangle(0,0,10,10)");
+        application->getNextOutputString();
+        defCommand.execute("def rectangle2 = Rectangle(0,0,10,5)");
+        application->getNextOutputString();
+        defCommand.execute("def combo = combo{rectangle1,rectangle2}");
+        application->getNextOutputString();
+        deleteCommand.execute("delete combo");
+        deleteCommand.undo();
+        deleteCommand.redo();
+
+        Media* media = application->getMediaByName("combo");
+
+        CHECK(media == nullptr);
+    }catch(NameNotFoundException){
+        FAIL("Should not be here");
+    }
+}
+
+
 TEST(deleteFromComboUndo, AreaCommand){
     Application* application = new Application();
     DefCommand defCommand(application);
